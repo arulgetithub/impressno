@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro Gurmukhi:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="supply.css">
+
+    <style>
+        body {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        #informations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+        }
+
+        @media screen and (max-width: 900px) {
+            #informations {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+    <title>Dashboard</title>
+</head>
+
+<body style="background-color: #243b55; padding-top: 10px; width: 100vw;">
+    <div class="navBar bg-dark p-3 px-5 d-flex align-items-center justify-content-between rounded mx-2"
+        style="height: 70px; width: calc(100vw - 33px);">
+        <div>
+            <b class="fs-2 text-white"
+                style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">VRNC</b>
+        </div>
+        <div class="d-flex">
+            <a class="p-0" href="index.html">
+                <div class="btn rounded-3 text-white"><b>Form</b></div>
+            </a>
+            <a href="dashboard.html">
+                <div class="btn rounded-3 text-white"><b>Dashboard</b></div>
+            </a>
+            <a href="new_form.html">
+                <div class="btn rounded-3 text-white"><b>Form 2</b></div>
+            </a>
+            <a href="new_dashboard.html">
+                <div class="btn rounded-3 text-white"><b>Dashboard 2</b></div>
+            </a>
+        </div>
+    </div>
+    <div class="p-5 py-3">
+        <!-- <div class="rounded-3 w-100 d-flex justify-content-center"
+            style="background-color: rgba(0, 0, 0, .5); border: 3px solid #fff">
+            <h2 class="text-white p-3 py-3"><b>Dashboard</b></h2>
+        </div> -->
+        <div class="my-3">
+            <h1 class="fs-1"><b>Dashboard</b></h1>
+        </div>
+        <div id="informations" class="my-4">
+            <!-- items comes here -->
+        </div>
+        <div class="modal fade " id="dashboardModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" id="dashboardBody">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><b class="text-black">#</b><b id="popupTitle"
+                                class="text-dark"></b></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-black">
+                        <!-- body here -->
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">1. Organisation
+                            </div>
+                            <div class="p-2" id="org"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">2. Name</div>
+                            <div class="p-2" id="name"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">3. Email</div>
+                            <div class="p-2" id="email"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">4. Contact</div>
+                            <div class="p-2" id="contact"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">5. Address</div>
+                            <div class="p-2" id="address"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">6. Unit Type</div>
+                            <div class="p-2" id="unitType"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">6.1 Others</div>
+                            <div class="p-2 text-dark" id="others_display"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">7. Unit investment
+                                (INR):</div>
+                            <div class="p-2" id="unitInvestment"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">8. Total labour
+                                force:</div>
+                            <div class="p-2" id="labour"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">9. End product:
+                            </div>
+                            <div class="p-2" id="end_product"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">10. Markets
+                                Served(1)</div>
+                            <div class="p-2" id="countries"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;"> Markets Served(2)
+                            </div>
+                            <div class="p-2" id="countries1"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;"> Markets Served(3)
+                            </div>
+                            <div class="p-2" id="countries2"></div>
+                        </div>
+                        <div class="d-flex bg-light rounded-3 my-2">
+                            <div class="fw-bold w-25 rounded-3 p-2" style="background-color: #ddd;">11. Total women:
+                            </div>
+                            <div class="p-2" id="women"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">12. Unit's annual
+                                production volume(units)</div>
+                            <div class="p-2" id="volume"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">13. Association
+                                memberships</div>
+                            <div class="p-2" id="memberships"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 14. Permit requirement
+                                and compliance status( If yes, mention the regulatory
+                                institutions)</div>
+                            <div class="p-2" id="permit"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 15. Sourcing (with
+                                percentage if known):</div>
+                            <div class="p-2" id="sourcing"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 16. Quality of Water
+                                supply:</div>
+                            <div class="p-2" id="performanceValue"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 17. Is the water treated
+                                before being used ?</div>
+                            <div class="p-2" id="treatment"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 18. Quantity of water
+                                supply :</div>
+                            <div class="p-2" id="quantity"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 19.1 Cost of Water
+                                (INR/KL) - Treated / Fresh Water(year1) :</div>
+                            <div class="p-2" id="cost"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 19.2 Does your unit
+                                track its factory / office water consumption separately(year1) :</div>
+                            <div class="p-2" id="consumption"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">19.3 Has your facility
+                                implemented a water balance to evaluate water input and output(year1) ?</div>
+                            <div class="p-2" id="balance"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">19.4 Which facility
+                                process/operation uses water the most (year1):</div>
+                            <div class="p-2" id="waterusage"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">19.5 Has your facility
+                                implemented a plan to optimize water usage (provide details)(year1) ?</div>
+                            <div class="p-2" id="usage"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">19.6 upload water report
+                                file(pdf/docx)(year1):</div>
+
+                            <div class="w-100 d-flex justify-content-between align-items-center">
+                                <div class="p-2" id="avatar"></div>
+                                <div class="btn btn-primary"
+                                    onclick="downloadFile(`/public/resources/${file1}`, `${file1}`)">Download</div>
+                            </div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">20.1 Cost of Water
+                                (INR/KL) - Treated / Fresh Water (year2):</div>
+                            <div class="p-2" id="cost2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">20.2 Does your unit track
+                                its factory / office water consumption separately(year2):</div>
+                            <div class="p-2" id="consumption2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">20.3 Has your facility
+                                implemented a water balance to evaluate water input and output(year2) ?</div>
+                            <div class="p-2" id="balance2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">20.4 Which facility
+                                process/operation uses water the most(year2) :</div>
+                            <div class="p-2" id="waterusage2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">20.5 Has your facility
+                                implemented a plan to optimize water usage (provide details)(year2) ?</div>
+                            <div class="p-2" id="usage2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">20.6 upload water report
+                                file(pdf/docx)(year2):</div>
+
+                            <div class="w-100 d-flex justify-content-between align-items-center">
+                                <div class="p-2" id="avatar2"></div>
+                                <div class="btn btn-primary"
+                                    onclick="downloadFile(`/public/resources/${file2}`, `${file2}`)">Download</div>
+                            </div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">21.1 Cost of Water
+                                (INR/KL) - Treated / Fresh Water(year3):</div>
+                            <div class="p-2" id="cost3"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">21.2. Does your unit
+                                track its factory / office water consumption separately(year3):</div>
+                            <div class="p-2" id="consumption3"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">21.3 Has your facility
+                                implemented a water balance to evaluate water input and output(year3) ?</div>
+                            <div class="p-2" id="balance3"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">21.4 Which facility
+                                process/operation uses water the most(year3) :</div>
+                            <div class="p-2" id="waterusage3"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">21.5 Has your facility
+                                implemented a plan to optimize water usage (provide details)(year3) ?</div>
+                            <div class="p-2" id="usage3"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">21.6 upload water report
+                                file(pdf/docx)(year3):</div>
+
+                            <div class="w-100 d-flex justify-content-between align-items-center">
+                                <div class="p-2" id="avatar3"></div>
+                                <div class="btn btn-primary"
+                                    onclick="downloadFile(`/public/resources/${file3}`, `${file3}`)">Download</div>
+                            </div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">22. Does your facility
+                                generate waste water</div>
+                            <div class="p-2" id="waste"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">23. Does your facility
+                                have zero liquid discharge (ZLD):</div>
+                            <div class="p-2" id="liquid"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">24. Treatment facility
+                                for the unit</div>
+                            <div class="p-2" id="effluent"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">24.1. Wastewater
+                                treatment methods/ practices:</div>
+                            <div class="p-2" id="methods"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">24.2.Please, fill the
+                                appropriate methods (<i>refer FEM 3.0
+                                    Module</i>) :</div>
+                            <div class="p-2" id="method"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">24.3. Total water
+                                treatment (m³) capacity of the
+                                unit:</div>
+                            <div class="p-2" id="treatment_capacity"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">25. Does your unit track
+                                its industrial / domestic wastewater volumes
+                                separately:</div>
+                            <div class="p-2" id="domestic"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">25.1. Wastewater volume
+                                percentage - Industrial(%)</div>
+                            <div class="p-2" id="industrial"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">25.1. Wastewater volume
+                                percentage - Domestic(%)</div>
+                            <div class="p-2" id="dom"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">25.2. Volume of treated
+                                wastewater per category- Industrial(%)</div>
+                            <div class="p-2" id="industrial2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">25.2. Volume of treated
+                                wastewater per category- Domestic(%)</div>
+                            <div class="p-2" id="dom2"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">26. Final discharge point
+                                of treated / untreated wastewater:</div>
+                            <div class="p-2" id="untreated"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">27. Percentage of Water
+                                Recovery % from Effluent:</div>
+                            <div class="p-2" id="recovery"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">28. Details on discharge
+                                of Industrial
+                                sludge:</div>
+                            <div class="p-2" id="industrial_sludge"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">29. Is the factory always
+                                in compliance with legal waste water quality standards,
+                                permits,
+                                monitoring or
+                                other contractual agreements?</div>
+                            <div class="p-2" id="standards"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">30. General Comments and
+                                Feedback:</div>
+                            <div class="p-2" id="comments"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">31. Relative to other
+                                water users in your local catchment (within 50km radius), does the
+                                factory face heavy
+                                water-related regulation and legal enforcement?</div>
+                            <div class="p-2" id="legal"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 32. Did your facility
+                                receive any government issued environmental violation records in the last
+                                3 years:</div>
+                            <div class="p-2" id="violation"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 33. Did your facility
+                                face temporary shutdown in the last 3 years:</div>
+                            <div class="p-2" id="tempshut"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 34. Did your facility
+                                considerable loss of business in the last 3 years:</div>
+                            <div class="p-2" id="loss"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 35. Did your facility
+                                recive legal action from individuals/community/instructons in the last 3
+                                years:</div>
+                            <div class="p-2" id="legalAction"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">36. Relative to other
+                                water users in your local catchment (within a 50km radius), would you
+                                consider the
+                                site a large water user/polluter?</div>
+                            <div class="p-2" id="polluter"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 37. How would you
+                                describe this site&#39;s general water management/stewardship maturity?</div>
+                            <div class="p-2" id="general"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 38. Standards/
+                                certifications- achieved/ planned. Give reasons:</div>
+                            <div class="p-2" id="achievement"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 39. Access to
+                                finance-source (incentives, government/ private schemes):</div>
+                            <div class="p-2" id="finance"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;">40. Access to technical
+                                know-how :</div>
+                            <div class="p-2" id="knowhow"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 41. Details regarding
+                                cluster level sustainbality intiatives:</div>
+                            <div class="p-2" id="clusterlevel"></div>
+                        </div>
+                        <div class="bg-light rounded-3 my-2">
+                            <div class="fw-bold rounded-3 p-2" style="background-color: #ddd;"> 42. regarding
+                                engagements with other stakeholder (state/national governament, communities,
+                                NGOs,academia):</div>
+                            <div class="p-2" id="stakeholders"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary" onclick="generateDashboardPDF()">Download</button> -->
+                        <a id="generateReportButton" onclick="generateReport()" class="btn btn-primary">Generate
+                            Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button >
+        Launch demo modal
+    </button> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+
+    <script>
+        axios.post("https://general-form-submission-backend.vercel.app/services/getInformations")
+            // axios.post("http://localhost:8080/services/getInformations")
+            .then(function (response) {
+                console.log(response.data.requests)
+                const htmlRequests = response.data.requests.reverse().map(item =>
+                    `<div onclick="popup(${item.informationId})" type="button" data-bs-toggle="modal" data-bs-target="#dashboardModal">
+                <div class="btn text-white rounded-3 p-4 d-flex align-items-center justify-content-between" style="background-color: rgba(0, 0, 0, .5)">
+                    <b class="fs-4">${item.name}</b>
+                    <b class="p-2 py-1 mx-3 rounded bg-primary" style="font-size: 13px;">${new Date(item.informationId).toLocaleDateString('en-GB')}</b>
+                </div>
+            </div>`).join("");
+                document.getElementById("informations").innerHTML = htmlRequests
+            })
+            .catch(err => console.log(err))
+
+
+        function popup(id) {
+            axios.post("https://general-form-submission-backend.vercel.app/services/getInformationById", {
+                // axios.post("http://localhost:8080/services/getInformationById", {
+                informationId: id
+            })
+                .then(function (res) {
+                    console.log(res);
+                    document.getElementById("popupTitle").innerHTML = res.data.information.informationId
+                    document.getElementById("org").innerHTML = res.data.information.name
+                    document.getElementById("name").innerHTML = res.data.information.orgName
+                    document.getElementById("email").innerHTML = res.data.information.mail
+                    document.getElementById("contact").innerHTML = res.data.information.contact
+                    document.getElementById("address").innerHTML = res.data.information.address
+                    document.getElementById("unitType").innerHTML = res.data.information.unitType
+                    document.getElementById("others_display").innerHTML = res.data.information.others_display
+                    document.getElementById("unitInvestment").innerHTML = res.data.information.unitInvestment
+                    document.getElementById("volume").innerHTML = res.data.information.volume
+                    document.getElementById("end_product").innerHTML = res.data.information.end_product
+                    document.getElementById("countries").innerHTML = res.data.information.countryInput
+                    document.getElementById("countries1").innerHTML = res.data.information.countryInput1
+                    document.getElementById("countries2").innerHTML = res.data.information.countryInput2
+                    document.getElementById("memberships").innerHTML = res.data.information.memberships
+                    document.getElementById("labour").innerHTML = res.data.information.labour
+                    document.getElementById("women").innerHTML = res.data.information.women
+                    document.getElementById("permit").innerHTML = res.data.information.permit.map(item => " " + item)
+                    document.getElementById("sourcing").innerHTML = res.data.information.sourcing.map(item => " " + item)
+                    document.getElementById("performanceValue").innerHTML = res.data.information.performanceValue
+                    document.getElementById("treatment").innerHTML = res.data.information.treatment
+                    document.getElementById("quantity").innerHTML = res.data.information.quantity
+                    document.getElementById("cost").innerHTML = res.data.information.cost
+                    document.getElementById("consumption").innerHTML = res.data.information.consumption
+                    document.getElementById("balance").innerHTML = res.data.information.balance
+                    document.getElementById("waterusage").innerHTML = res.data.information.waterusage
+                    document.getElementById("usage").innerHTML = res.data.information.usage
+                    document.getElementById("avatar").innerHTML = res.data.information.avatar1
+                    file1 = res.data.information.avatar1
+                    document.getElementById("cost2").innerHTML = res.data.information.cost2
+                    document.getElementById("consumption2").innerHTML = res.data.information.consumption2
+                    document.getElementById("balance2").innerHTML = res.data.information.balance2
+                    document.getElementById("waterusage2").innerHTML = res.data.information.waterusage2
+                    document.getElementById("usage2").innerHTML = res.data.information.usage2
+                    document.getElementById("avatar2").innerHTML = res.data.information.avatar2
+                    file2 = res.data.information.avatar2
+                    document.getElementById("cost3").innerHTML = res.data.information.cost3
+                    document.getElementById("consumption3").innerHTML = res.data.information.consumption3
+                    document.getElementById("balance3").innerHTML = res.data.information.balance3
+                    document.getElementById("waterusage3").innerHTML = res.data.information.waterusage3
+                    document.getElementById("usage3").innerHTML = res.data.information.usage3
+                    document.getElementById("avatar3").innerHTML = res.data.information.avatar3
+                    file3 = res.data.information.avatar3
+                    document.getElementById("waste").innerHTML = res.data.information.waste
+                    document.getElementById("liquid").innerHTML = res.data.information.liquid
+                    document.getElementById("effluent").innerHTML = res.data.information.treatmentFacility.map(item => " " + item)
+                    document.getElementById("method").innerHTML = res.data.information.method
+                    document.getElementById("methods").innerHTML = res.data.information.practiceMethods.map(item => " " + item)
+                    document.getElementById("treatment_capacity").innerHTML = res.data.information.treatment_capacity
+                    document.getElementById("domestic").innerHTML = res.data.information.domestic
+                    document.getElementById("industrial").innerHTML = res.data.information.industrial
+                    document.getElementById("dom").innerHTML = res.data.information.domestic1
+                    document.getElementById("industrial2").innerHTML = res.data.information.industrial1
+                    document.getElementById("dom2").innerHTML = res.data.information.domestic2
+                    document.getElementById("untreated").innerHTML = res.data.information.untreatedWater.map(item => " " + item)
+                    document.getElementById("recovery").innerHTML = res.data.information.water_recovery
+                    document.getElementById("industrial_sludge").innerHTML = res.data.information.industrial_sludge
+                    document.getElementById("standards").innerHTML = res.data.information.qualityStandards.map(item => " " + item)
+                    document.getElementById("comments").innerHTML = res.data.information.comments
+                    document.getElementById("legal").innerHTML = res.data.information.legalEnforcement.map(item => " " + item)
+                    document.getElementById("violation").innerHTML = res.data.information.records
+                    document.getElementById("tempshut").innerHTML = res.data.information.temp
+                    document.getElementById("loss").innerHTML = res.data.information.loss
+                    document.getElementById("legalAction").innerHTML = res.data.information.legal
+                    document.getElementById("polluter").innerHTML = res.data.information.large
+                    document.getElementById("general").innerHTML = res.data.information.general
+                    document.getElementById("achievement").innerHTML = res.data.information.achievement
+                    document.getElementById("finance").innerHTML = res.data.information.financeaccess
+                    document.getElementById("knowhow").innerHTML = res.data.information.knowhow
+                    document.getElementById("clusterlevel").innerHTML = res.data.information.clusterlevel
+                    document.getElementById("stakeholders").innerHTML = res.data.information.stakeholders
+                    document.getElementById("recovery").innerHTML = res.data.information.water_recovery
+
+                })
+
+        }
+
+        function downloadFile(path, fileName) {
+            axios.get("https://general-form-submission-backend.vercel.app/form2/getFormById", {
+                // axios.get(`http://localhost:8080/downloadFile`, {
+                responseType: 'blob',
+                params: { fileId: path },
+            })
+                .then(function (res) {
+                    var ee = document.createElement("a");
+                    ee.href = URL.createObjectURL(new Blob([res.data]));
+                    ee.setAttribute("download", fileName)
+                    document.body.append(ee)
+                    ee.click()
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+
+
+        function generateReport() {
+            // Construct the URL with the formId parameter
+            var reportUrl = "report.html?formId=" + document.getElementById("popupTitle").innerHTML;
+
+            // Redirect to the report URL
+            window.location.href = reportUrl;
+        }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        function generateDashboardPDF() {
+            const element = document.getElementById("dashboardBody")
+
+            console.log(element);
+
+            html2pdf()
+                .from(element)
+                .save();
+        }
+    </script>
+</body>
+
+</html>

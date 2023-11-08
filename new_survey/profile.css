@@ -1,0 +1,303 @@
+fieldset {
+    /* background-color: rgb(255, 255, 255); */
+    width: 830px;
+    padding-left: 30px;
+    padding-top: 20px;
+    background: rgba(0, 0, 0, .5);
+    /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16); */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    padding-bottom: 20px;
+
+    text-align: left;
+}
+
+
+#waterSupply {
+    display: none;
+}
+
+#waterDischarge {
+    display: none;
+}
+
+#riskAndChallenges {
+    display: none;
+}
+
+#success {
+    display: none;
+}
+
+
+body {
+    /* background: rgb(235, 235, 235); */
+    background: #243b55;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div p {
+
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input,
+select {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    outline: 0;
+    padding: 4px 20px 0;
+    margin-left: 20px;
+
+}
+
+#op,
+.requirement {
+    margin-left: 20px;
+}
+
+
+textarea {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 200px;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+    max-width: 600px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+form {
+    text-indent: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.container {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Tiro Gurmukhi', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+#next2 {
+    font-size: 16px;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 1px !important;
+    padding-right: 10px;
+    background-color: #287ff9;
+    border-radius: 5px 5px 5px 5px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    /* margin-left: 30px; */
+}
+
+#next2:hover {
+    background-color: #2067cb;
+    color: rgb(255, 255, 255);
+}
+
+.submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-left: 320px;
+    text-align: center;
+    width: 18%;
+}
+
+.submit:active {
+    background-color: #06b;
+}
+
+#mail {
+    margin-left: 100px;
+}
+
+
+#name {
+    margin-left: 115px;
+}
+
+#end_product {
+    margin-left: 200px;
+}
+
+#women {
+    margin-left: 50px;
+}
+
+
+#next2 {
+    margin-left: 675px;
+    margin-bottom: 20px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+@media(max-width: 800px) {
+
+    form,
+    select {
+        font-size: 12px;
+    }
+
+
+    .container {
+        width: 400px;
+    }
+
+    input,
+    select {
+        width: 120px;
+        height: 20px;
+    }
+
+    textarea {
+        max-width: 200px;
+    }
+
+    #end_product {
+        margin-left: 20px;
+    }
+
+    #women {
+        margin-left: 42px;
+    }
+
+    #name {
+        margin-left: 74px;
+    }
+
+    #next2 {
+        margin-left: 180px;
+        float: right;
+        margin-right: 20px;
+    }
+
+
+}
+
+#Contact {
+    margin-left: 42px;
+}
+
+#country {
+    max-width: 200px;
+    background-color: #303245;
+    color: #fff;
+    border-color: #303245;
+}
+
+.successDiv {
+    background-color: green;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+
+.splbutton {
+    position: relative;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.splbutton:active {
+    background: #007a63;
+}
+
+.splbutton__text {
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+.splbutton--loading .splbutton__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.splbutton--loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

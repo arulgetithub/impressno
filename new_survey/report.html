@@ -1,0 +1,1216 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FFA500;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .mark {
+            background-color: yellow;
+        }
+
+        /* TOP LOGO PART CSS */
+
+        .out-container {
+            border: 1px solid black;
+            width: 700px;
+            
+        }
+
+        .container {
+            display: flex;
+
+
+            width: 700px;
+        }
+
+        .column {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="p-3 m-5 border border-3 rounded d-flex align-items-center justify-content-between">
+            <b class="fs-3">Click this button to download the report</b>
+            <div class="btn btn-primary p-3" onclick="generateReportPDF()">Download Report</div>
+        </div>
+        <div id="reportContent" class="p-5">
+            <center>
+                <h2>Diagnostic Study on Clean
+                    <br> Technology Implementation in Tiruppur Textile<br>Cluster
+                </h2>
+                <h4><br> @ M/s <span id="facility_name1">{facility_name}</span><br>
+
+                    {Facility_Photo_at_Entrance}
+
+                </h4>
+                <br><br>
+
+                </h2>
+                <h4>
+                    Location <span id="facility_location1">{facility_location}</span><br>
+                    <span id="assessment_conducted_on2">{Assessment_Conducted_on}</span>
+                </h4>
+            </center>
+
+            <br>
+
+            <!-- <p>WWF-India’s Rivers, Wetlands & Water Policy team is launching a program for the conservation of the
+                Noyyal
+                and
+                Bhavani rivers. The Industrial Water Stewardship component of the program will look at working with Textile industries along the key stretches of Noyyal
+                to
+                minimize their impacts on the river and ensure the long sustainability of the industries. To develop the
+                strategy for industrial water management work and to develop a clean technology implementation plan.
+                Under
+                the
+                {Assessment_Phase} of the program.
+                M/s {facility_name} enrolled for the Stewardship Program. The Preliminary visit was conducted by M/s
+                VRNC at the unit on <span id="assessment_conducted_on1">{Assessment_Conducted_on}</span> to identify the
+                potential areas for Water, Energy savings.
+            </p> -->
+            <center>
+                <div class="out-container">
+                    <div class="container">
+                        <div class="column">
+                            <h5>prepared by:</h5>
+                            <img class="image" src="/img/logo.jpeg" alt="Image 1">
+
+                        </div>
+                        <div class="column">
+                            <!-- Middle column is empty -->
+                        </div>
+                        <div class="column">
+                            <h5>Submitted Through:</h5>
+                            <img class="image" src="/img/wwf-logo.png" alt="Image 2">
+                        </div>
+                    </div><br>
+                    <p style="margin-top: -30px;font-size: 16px;">
+                    Raman Azhahia Manavalan (CEO - VRNC) | <a href="#">www.vrnc.in </a>| <a href="#" >ram@vrnc.in </a> | +91-9965555774 |  
+                    </p>
+                </div>
+            </center>
+
+            <br>
+            <h2>Executive Summary</h2>
+            <p>WWF-India’s Rivers, Wetlands & Water Policy team is launching a program for the conservation of the
+                Noyyal and Bhavani rivers. The Industrial Water Stewardship component of the program will look at
+                working with Textile industries along the key stretches of Noyyal to minimize their impacts on the river
+                and ensure the long sustainability of the industries. To develop the strategy for industrial water
+                management work and to develop a clean technology implementation plan. Under the 2nd phase of the
+                program, 10 companies have enrolled for the Assessment to identify the opportunities for Resource
+                Efficiency & Cleaner Production. M/s Menaka Textiles (Sudhama Group), Tirupur is a Small-Scale Unit and
+                is engaged in Export and Domestic Knit Garment Manufacturing. To explore Opportunities in Technology
+                Up-gradation, Water & Resource Conservation, the management expressed their interest to get enrolling in
+                the WWF Supported Cleaner Production & Water Stewardship Program. The Preliminary visit was conducted by
+                M/s VRNC at the unit in June 2022 to identify the potential areas for Water, Energy savings.
+            </p>
+            <br>
+
+            <table>
+                <tr>
+                    <th>SL #</th>
+                    <th>Diagnostic Study Parameters</th>
+                    <th>Observations</th>
+                    <th>Remarks</th>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td>Facility Name</td>
+                    <td id="facility_name">{facility_name}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>02</td>
+                    <td>Facility Location</td>
+                    <td id="facility_location">{facility_location}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>03</td>
+                    <td>Assessment Conducted on</td>
+                    <td id="assessment_conducted_on">{Assessment_Conducted_on}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>04</td>
+                    <td>Factory Operation</td>
+                    <td id="facility_operations">{factor_operation}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>05</td>
+                    <td>Facility Category</td>
+                    <td id="facility_category"> {facility_category}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>06</td>
+                    <td>Products Manufactured</td>
+                    <td id="product_mfd">{products_manufactured}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>07</td>
+                    <td>Production Capacity</td>
+                    <td id="prod_capacity">{production_capacity}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>08</td>
+                    <td>No of Shifts</td>
+                    <td id="number_of_shifts">{no_of_shifts}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>09</td>
+                    <td>Hrs/Shift</td>
+                    <td id="hr_shift">{hrs_shift}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>10</td>
+                    <td>Total Number of Workforce Employed</td>
+                    <td id="total_number_of_workforce_employed">{total_number_of_workforce_employed}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>11</td>
+                    <td>Pollution Control Status</td>
+                    <td>{pollution_control_status}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>12</td>
+                    <td>Certifications Obtained</td>
+                    <td id="cert_obtained">{certifications_obtained}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>13</td>
+                    <td>Certifications Planned</td>
+                    <td id="cert_planned">{certifications_planned}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>14</td>
+                    <td>Awards Received</td>
+                    <td id="awards_received">{awards_received}</td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+            <h3>Resource Consumption Details</h3>
+
+            <table>
+                <tr>
+                    <th>SL #</th>
+                    <th>Diagnostic Study Parameters</th>
+                    <th>Observations</th>
+                    <th>Remarks</th>
+                </tr>
+
+                <tr>
+                    <td>15</td>
+                    <td>Electrical Energy Source</td>
+                    <td id="elec_energy_src">{Electrical_Energy_Source}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>16</td>
+                    <td>Baseline Data Period <br>(Mention the FY Period as YY-YY)</td>
+                    <td id="baseline_data_period">{Baseline_Data_Period_Mention_the_FY_Period_as_YY-YY}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>17</td>
+                    <td>Annual Electricity Consumption (Total)(kWh/Annum)</td>
+                    <td id="total_elec_consumption">{Annual_Electricity_consumption_Total_kWh/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>18</td>
+                    <td>Annual Electricity Consumption (Grid)(kWh/Annum)</td>
+                    <td id="annual_elec_consumption">{Annual_Electricity_consumption_Grid_kWh/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>19</td>
+                    <td>Annual Electricity generation (Renewable Energy-Wind)(kWh/Annum)</td>
+                    <td id="wind_elec_generation">{Annual_Electricity_generation_Renewable Energy-Wind_kWh/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>20</td>
+                    <td>Annual Electricity generation (Renewable Energy-Solar)(kWh/Annum)</td>
+                    <td id="solar_elec_generation">{Annual_Electricity_generation_Renewable Energy-Solar_kWh/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>21</td>
+                    <td>Annual Energy Cost (INR/Annum)</td>
+                    <td id="annual_energy_cost">{Annual_Energy_Cost_INR/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>22</td>
+                    <td>Genset Diesel Consumption (Kl/Annum)</td>
+                    <td id="genset_diesel_consumption">{Genset_Diesel_Consumption_Kl/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>23</td>
+                    <td>Boiler Diesel Consumption (Kl/Annum)</td>
+                    <td id="boiler_diesel_consumption">{Boiler_Diesel_Consumption_Kl/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>24</td>
+                    <td>Annual Diesel Cost (INR/Annum)</td>
+                    <td id="annual_diesel_cost">{Annual_Diesel_Cost_INR/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>25</td>
+                    <td>Petrol Consumption - Logistics (Kl/Annum)</td>
+                    <td id="petrol_consumption_logistics">{Petrol_Consumption\_-\_Logistics_Kl/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>26</td>
+                    <td>Petrol Cost- Logistics (INR/Annum)</td>
+                    <td id="petrol_cost_logistics">{Petrol_Cost\_-\_Logistics_INR/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>27</td>
+                    <td>Boiler Fuel Used</td>
+                    <td id="boiler_fuel">{Boiler_Fuel_Used}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>28</td>
+                    <td>Boiler Fuel Used in Quantity (Ton/Annum)</td>
+                    <td id="boiler_fuel_quantity">{Boiler_Fuel_Used_in_Quantity_Ton/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>29</td>
+                    <td>Annual Production Qty</td>
+                    <td id="annual_production_quantity">{Annual_Production_Qty}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>30</td>
+                    <td>Source Water</td>
+                    <td id="src_water">{Source_Water}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>31</td>
+                    <td>Quantity of Fresh Water (Kl/Annum)</td>
+                    <td id="qty_fresh_water">{Quantity_of_Fresh_Water_Kl/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>32</td>
+                    <td>Quantity of Recovered Water (KL/Annum)</td>
+                    <td id="quantity_recovered_water">{Quantity_of_Recovered_Water_KL/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>33</td>
+                    <td>Total Quantity of Water (KL/Annum)</td>
+                    <td id="total_qty_water">{Total_Quantity_of_Water_KL/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>34</td>
+                    <td>Cost of Fresh Water (INR/KL)</td>
+                    <td id="cost_fresh_water"> {Cost_of_Fresh_Water_INR/KL}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>35</td>
+                    <td>Cost of Recovered Water (INR/KL)</td>
+                    <td id="cost_recovered_water">{Cost_of_Recovered_Water_INR/KL}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>36</td>
+                    <td>ZLD Applicable</td>
+                    <td id="zld">{ZLD_Applicable}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>37</td>
+                    <td>Effluent Treatment Plant Category</td>
+                    <td id="effluent_treatment">{Effluent_Treatment_Plant_Category}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>38</td>
+                    <td>Implementation of Water Quality Watch Center</td>
+                    <td id="water_quality">{Implementation_of_Water_Quality_Watch_Center}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>39</td>
+                    <td>Water Consumed for Domestic Use (KL/Day)</td>
+                    <td id="domestic_water_consumption">{Water_Consumed_for_Domestic_Use_KL/Day}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>40</td>
+                    <td>Garden Area in Sq.Meter</td>
+                    <td id="garden_area">{Garden_Area_in_Sq.Meter}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>40</td>
+                    <td>Water Consumed for Garden Use (KL/Day)</td>
+                    <td id="garden_use">{Water_Consumed_for_Garden_Use_KL/Day}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>41</td>
+                    <td>Garden & Domestic Water Use Observations</td>
+                    <td id="domestic_water_consumption1">{Garden\_&\_Domestic_Water_Use_Observations}</td>
+                    <td></td>
+                </tr>
+
+            </table>
+            <br>
+
+            <table>
+                <tr>
+                    <th colspan="3">Utility Observations</th>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>Energy Source Forms of Fuels</td>
+                    <td id="src_fuel">{Energy_Source_Forms_of_Fuels}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>43</td>
+                    <td>Assessment Observation at the Power House</td>
+                    <td id="assess_ob_at_power_house">{Assessment_Observation_at_the_Power_House}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>44</td>
+                    <td>Assessment Observation at the Compressor Room</td>
+                    <td id="assess_ob_at_compressor">{Assessment_Observation_at_the_Compressor_Room}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>45</td>
+                    <td>Assessment Observation at the Genset Room</td>
+                    <td id="assess_ob_at_genset">{Assessment_Observation_at_the_Genset_Room}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>46</td>
+                    <td>Assessment Observation at the Boiler Area</td>
+                    <td id="assess_ob_at_boiler">{Assessment_Observation_at_the_Boiler_Area}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>47</td>
+                    <td>Assessment Observation at the Thermopac</td>
+                    <td id="assess_ob_at_thermopac"> {Assessment_Observation_at_the_Thermopac}</td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+
+            <table>
+                <tr>
+                    <th colspan="3">Energy Saving Opportunities</th>
+                </tr>
+                <tr>
+                <tr>
+                    <td>48</td>
+                    <td>Scope for Energy Savings in Compressed Air Systems</td>
+                    <td id="scope_comp_air">{Scope_for_Energy_Savings_in_Compressed_Air_Systems}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>49</td>
+                    <td>Compressed Air Systems Savings in kWh/Annum</td>
+                    <td id="compressed_air_saving">{Compressed_Air_Systems_Savings_in_kWh/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>50</td>
+                    <td>Lighting Systems - Observations</td>
+                    <td id="lighting_observation">{Lighting_Systems\_-\_Observations}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>51</td>
+                    <td>Lighting Systems - Savings Opportunities in kWh/Annum</td>
+                    <td id="light_save">{Lighting_Systems\_-\_Savings_Opportunities_in_kWh\_/\_Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>52</td>
+                    <td>Lighting Systems - Estimated Investments in INR</td>
+                    <td id="lighting_est_investment">{Lighting_Systems\_-\_Estimated_Investments_in_INR}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>53</td>
+                    <td>Lighting Systems - Estimated Savings in INR</td>
+                    <td id="lighting_est_savings">{Lighting_Systems\_-\_Estimated_Savings_in_INR}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>54</td>
+                    <td id="">Electrical Motors - Observations</td>
+                    <td id="electrical_motors_observations">{Electrical_Motors\_-\_Observations}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>55</td>
+                    <td>Electrical Motors - Total Numbers</td>
+                    <td id="total_elec_motors">
+                        <id="total_elec_motors">>{Electrical_Motors\_-\_Total_Numbers}
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>56</td>
+                    <td>Electrical Motors - Energy Saving Opportunities</td>
+                    <td id="elec_motors">{Electrical_Motors\_-\_Energy_Saving_Opportunities}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>57</td>
+                    <td>Energy Saving Opportunities in Electrical Motors (kWh/Annum)</td>
+                    <td>{Energy_Saving_Opportunities_in_Electrical_Motors_kWh/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>58</td>
+                    <td id="elec_motors">Estimated Savings- Motor Upgradation (INR/Annum)</td>
+                    <td>{Estimated_Savings\_-\_Motor_Upgradation_INR/Annum}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>59</td>
+                    <td>Waste Heat Recovery Observations</td>
+                    <td id="scope_waste">{Waste_Heat_Recovery_Observations}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>60</td>
+                    <td>Scope for Waste Heat Recovery</td>
+                    <td>{Scope_for_Waste_Heat_Recovery}</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>61</td>
+                    <td>Waste Heat Recovery Fuel Savings (Tons/Annum)</td>
+                    <td>{Waste_Heat_Recovery_Fuel_Savings_Tons/Annum}</td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+
+            <table>
+                <tr>
+                    <th colspan="3">Production Shopfloor</th>
+                </tr>
+                <tr>
+                <tr>
+                    <td>62</td>
+                    <td>Production Machine Utilization & Data Collection Aspects</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>63</td>
+                    <td>Installation status of Measuring & Monitoring Systems for Energy, Water, Fuel & Waste Etc</td>
+                    <td>{Installation_status_of_Measuring\_&\_Monitoring_Systems_for_Energy,\_Water,\_Fuel\_&\_Waste_Etc}
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>64</td>
+                    <td>Management Commitment on Energy & Resource Efficiency (Availability of Policy & Systems)</td>
+                    <td>{Management_Commitment_on_Energy\_&\_Resource_Efficiency_Availability_of_Policy\_&\_Systems}
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>65</td>
+                    <td>Technology Upgradation Opportunities in the Facility</td>
+                    <td id="opportunities_in_the_facility">{Technology_Upgradation_Opportunities_in_the_Facility}</td>
+                    <td></td>
+                </tr>
+
+
+                <table>
+                    <tr>
+                        <th colspan="3">Sustainability Initiatives, Material Conservation, Water Saving Measures</th>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>66</td>
+                        <td>Material Conservation & Improvement Opportunities in Packing</td>
+                        <td id="material_conservation_opportunities">
+                            {Material_Conservation\_&\_Improvement_Opportunities_in_Packing}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>67</td>
+                        <td>Water Recovery & ReUse Opportunities</td>
+                        <td id="water_reuse_opportunities">{Water_Recovery\_&\_ReUse_Opportunities}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>68</td>
+                        <td>Scope for Renewable Energy Investment Opportunities</td>
+                        <td id="scope_for_renewable">{Scope_for_Renewable_Energy_Investment_Opportunities}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>69</td>
+                        <td>Details of Renewable Energy Projects</td>
+                        <td id="details_of_renewable_energy">{Details_of_Renewable_Energy_Projects}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>70</td>
+                        <td>Total Roof Area in Sq.Meter</td>
+                        <td>{Total_Roof_Area_in_SqMeter}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>71</td>
+                        <td>Annual Rainfall in Meters</td>
+                        <td id="annual_rainfall"> {Annual_Rainfall_in_Meters}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>72</td>
+                        <td>Annual Rainfall in mm</td>
+                        <td>{Annual_Rainfall_in_mm}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>73</td>
+                        <td>Rain Water Harvesting Scope</td>
+                        <td>{Rain_Water_Harvesting_Scope}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>74</td>
+                        <td>Rain Water Harvesting Observation</td>
+                        <td id="rw_harvesting_observation">{Rain_Water_Harvesting_Observation}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>75</td>
+                        <td>Process Water Saving Opportunties</td>
+                        <td>{Process_Water_Saving_Opportunties}</td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+                <br>
+
+                <table>
+                    <tr>
+                        <th colspan="3">Safety Observations</th>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>76</td>
+                        <td>General Observations on Safety</td>
+                        <td id="obs_on_safety">{General_Observations_on_Safety}</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>77</td>
+                        <td>General Observations on Electrical Earthing & Electrical Systems</td>
+                        <td id="obs_on_elec_earth">{General_Observations_on_Electrical_Earthing\_&\_Electrical_Systems}
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>78</td>
+                        <td>Overall Observations & Remarks on Safety</td>
+                        <td>{Overall_Observations\_&\_Remarks_on_Safety}</td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+
+                <table>
+                    <h3>Consolidated Table on Resource Consumption</h2>
+
+                        <tr>
+                            <th><strong>Total Production (Kgs)</strong></th>
+                            <td id="annual_production_quantity">{Annual_Production_Qty}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Water Consumption KL/Annum</strong></th>
+                            <td>{Total_Quantity_of_Water_KL/Annum}</td>
+                        </tr>
+                        <tr>
+                            <th><strong>Fresh Water Usage KL/Annum</strong></td>
+                            <td>{Quantity_of_Fresh_Water_Kl/Annum}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Recovered Water KL/Annum</strong></td>
+                            <td>{Quantity_of_Recovered_Water_KL/Annum}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Electrical Energy Consumed (kWh/Annum)</strong></td>
+                            <td>{Annual_Electricity_consumption_Total_kWh/Annum}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Boiler Fuel Ton/Yr</strong></td>
+                            <td>{Boiler_Fuel_Used_in_Quantity_Ton/Annum}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Specific Water Consumption (Ltrs/Kg)</strong></td>
+                            <td>{Specific_Water_Ltrs/Unit_of_Production}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Specific Energy Consumption (kWh/Kg)</strong></td>
+                            <td>{Specific_Energy_kWh/Unit_of_Production}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Specific firewood Consumption (Kg/Kg)</strong></td>
+                            <td>{Specific_Fuel_Kg/Unit_of_Production}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Energy Cost/Kg</strong></td>
+                            <td>{Specific_Energy_Cost_Rs/Unit_of_Production}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Thermal Fuel Cost</strong></td>
+                            <td>{Specific_Fuel_Cost_Rs/Unit_of_Production}</td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Specific Water Cost /Kg</strong></td>
+                            <td>{Specific_Water_Cost_Rs/Unit_of_Production}</td>
+                        </tr>
+
+                </table>
+
+                <table>
+
+                    <tr>
+                        <th><strong>Identified Electricity Savings kWh/Yr</strong></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th><strong>Identified Fuel Savings Ton/Yr</strong></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th><strong>Identified Water Savings KL/Yr</strong></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th><strong>Identified Material Savings</strong></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th><strong>Reduction in tCO2</strong></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th><strong>Total Number of CT Opportunities Identified</strong></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+                <br>
+
+                <table>
+                    <h3>Clean Tech Opportunities Identified & Savings Potential</h3>
+                    </th>
+
+                    <tr>
+                        <th><strong>CT Opportunities Identified</strong></th>
+                        <th><strong>Savings in kWh/Yr</strong></th>
+                        <th><strong>Unit Cost in INR</strong></th>
+                        <th><strong>Savings in INR/Yr</strong></th>
+                        <th><strong>Investments in Lakhs</strong></th>
+                        <th><strong>Payback in Months</strong></th>
+                    </tr>
+
+                    <tr>
+                        <td>{Scope_for_Energy_Savings_in_Compressed_Air_Systems}</td>
+                        <td>{Compressed_Air_Systems_Savings_in_kWh/Annum}</td>
+                        <td>{Compressed_Air_System}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Lighting Systems - Observations</td>
+                        <td>Lighting Systems - Savings Opportunities in kWh/Annum</td>
+                        <td>[Lighting Systems - Estimated Savings in INR]{.mark}</td>
+                        <td>Lighting Systems - Estimated Investments in INR</td>
+                        <td>{Lighting_Payback}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Electrical Motors - Energy Saving Opportunities</td>
+                        <td>Energy Saving Opportunities in Electrical Motors (kWh/Annum)</td>
+                        <td>Estimated Savings- Motor Upgradation (INR/Annum)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Scope for Waste Heat Recovery</td>
+                        <td>Waste Heat Recovery Fuel Savings (Tons/Annum)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Technology Upgradation Opportunities in the Facility</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Process Water Saving Opportunties</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rain Water Harvesting Observation</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Scope for Renewable Energy Investment Opportunities</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Assessment Observation at the Thermopac</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+                <h3>Glimpse during Assessment</h3>
+
+                <table>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_the_Power_House_Photo}" </td>
+                        <td>{Assessment_Observation_at_the_Compressor_Room_Photo}" </td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_the_Power_House}</td>
+                        <td>{Assessment_Observation_at_the_Compressor_Room}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_the_Genset_Room_Photo}" </td>
+                        <td>{Assessment_Observation_at_the_Boiler_Area_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_the_Genset_Room}</td>
+                        <td>{Assessment_Observation_at_the_Boiler_Area}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_the_Thermopac_Photo}</td>
+                        <td>{Assessment_Observation_at_the_Other_Facilities_Chiller, Cooling Tower Etc_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_the_Thermopac}</td>
+                        <td>{Assessment_Observation_at_the_Other_Facilities_Chiller Cooling Tower Etc}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Lighting_Systems\_ -\_ Photo}</td>
+                        <td>{Assessment_Observation_at\_ Raw_Material_Inward_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>{Assessment_Observation_at\_ Raw_Material_Inward}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_Material_Handling_Photo}"</td>
+                        <td>{Production_Machine_Utilization\_&\_Data_Collection_Aspects_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Assessment_Observation_at_Material_Handling}</td>
+                        <td>{Production_Machine_Utilization\_&\_Data_Collection_Aspects}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Production_Layout_Observations_Photo}"</td>
+                        <td>{Details_of_Renewable_Energy_Projects_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td>{Production_Layout_Observations}</td>
+                        <td>{Details_of_Renewable_Energy_Projects}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{General_Observations_on_Safety_Critical_Photo}"</td>
+                        <td>{General_Observations_on_Safety_Production_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td>{General_Observations_on_Safety_Critical}</td>
+                        <td>{General_Observations_on_Safety_Production}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{General_Observations_on_Safety_Electrical_Photo}"</td>
+                        <td>{General_Observations_on_Safety_Chemical_Handling_Photo}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{General_Observations_on_Safety_Electrical}</td>
+                        <td>{General_Observations_on_Safety_Chemical_Handling}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{General_Observations_on_Safety_Fire_Hazards_Photo}></td>
+                        <td>{General_Observations_on_Electrical_Earthing\_&\_Electrical_Systems_Photo}"</td>
+                    </tr>
+
+                    <tr>
+                        <td>{General_Observations_on_Safety_Fire_Hazards}</td>
+                        <td>{General_Observations_on_Electrical_Earthing\_&\_Electrical_Systems}</td>
+                    </tr>
+
+                </table>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // Get the current URL
+        const url = new URL(window.location.href);
+
+        // Extract the value of "param1"
+        const formIdValue = url.searchParams.get("formId");
+
+        axios.post("https://general-form-submission-backend.vercel.app/form2/getFormById", {
+            form2Id: formIdValue
+        })
+            .then(function (response) {
+                console.log(response.data.form)
+
+                const date = new Date(response.data.form.form2Id)
+
+                document.getElementById("facility_name").innerHTML = response.data.form.facility_name;
+                document.getElementById("facility_name1").innerHTML = response.data.form.facility_name;
+                document.getElementById("facility_location").innerHTML = response.data.form.facility_location;
+                document.getElementById("facility_location1").innerHTML = response.data.form.facility_location;
+                document.getElementById("assessment_conducted_on").innerHTML = date.toLocaleDateString()
+                document.getElementById("assessment_conducted_on1").innerHTML = date.toLocaleDateString()
+                document.getElementById("assessment_conducted_on2").innerHTML = date.toLocaleDateString()
+                document.getElementById('facility_operations').innerHTML = response.data.form.f_operation[0]
+                document.getElementById('facility_category').innerHTML = response.data.form.facility_categor
+                document.getElementById("product_mfd").innerHTML = response.data.form.product_mfd;
+                document.getElementById('prod_capacity').innerHTML = response.data.form.prod_capacity;
+                document.getElementById('number_of_shifts').innerHTML = response.data.form.number_of_shifts;
+                document.getElementById("hr_shift").innerHTML = response.data.form.hr_shift;
+                document.getElementById("total_number_of_workforce_employed").innerHTML = response.data.form.wrk_frc;
+
+                document.getElementById('cert_obtained').innerHTML = response.data.form.cert_obtained;
+                document.getElementById('cert_planned').innerHTML = response.data.form.cert_planned;
+                document.getElementById('awards_received').innerHTML = response.data.form.award_recieved;
+                document.getElementById("elec_energy_src").innerHTML = response.data.form.mgmt_on_energy_resource;
+                document.getElementById('baseline_data_period').innerHTML = response.data.form.baseline_data_period;
+                document.getElementById('annual_elec_consumption').innerHTML = response.data.form.annual_elec_consumption;
+                document.getElementById('total_elec_consumption').innerHTML = response.data.form.total_elec_consumption;
+                document.getElementById("facility_location").innerHTML = response.data.form.facility_location;
+                document.getElementById('facility_category').innerHTML = response.data.form.facility_category;
+                document.getElementById('wind_elec_generation').innerHTML = response.data.form.wind_elec_generation;
+                document.getElementById('quantity_recovered_water').innerHTML = response.data.form.total_qty_water;
+
+                document.getElementById("solar_elec_generation").innerHTML = response.data.form.solar_elec_generation;
+                document.getElementById('annual_energy_cost').innerHTML = response.data.form.annual_energy_cost;
+                document.getElementById("genset_diesel_consumption").innerHTML = response.data.form.genset_diesel_consumption;
+                document.getElementById('boiler_diesel_consumption').innerHTML = response.data.form.boiler_diesel_consumption;
+                document.getElementById('annual_diesel_cost').innerHTML = response.data.form.annual_diesel_cost;
+
+                document.getElementById("petrol_consumption_logistics").innerHTML = response.data.form.petrol_consumption_logistics;
+                document.getElementById('petrol_cost_logistics').innerHTML = response.data.form.petrol_cost_logistics;
+                document.getElementById("boiler_fuel").innerHTML = response.data.form.boiler_fuel;
+                document.getElementById('boiler_fuel_quantity').innerHTML = response.data.form.boiler_fuel_quantity;
+                document.getElementById("annual_production_quantity").innerHTML = response.data.form.annual_production_quantity;
+                document.getElementById('src_water').innerHTML = response.data.form.src_water;
+
+                document.getElementById("qty_fresh_water").innerHTML = response.data.form.qty_fresh_water;
+
+                document.getElementById('total_qty_water').innerHTML = response.data.form.total_qty_water;
+                document.getElementById("cost_fresh_water").innerHTML = response.data.form.cost_fresh_water;
+                document.getElementById('cost_recovered_water').innerHTML = response.data.form.cost_recovered_water;
+                document.getElementById("zld").innerHTML = response.data.form.zld;
+
+                document.getElementById('effluent_treatment').innerHTML = response.data.form.effluent_treatment;
+                document.getElementById("water_quality").innerHTML = response.data.form.water_quality;
+
+                document.getElementById('domestic_water_consumption').innerHTML = response.data.form.domestic_water_consumption;
+                document.getElementById('domestic_water_consumption1').innerHTML = response.data.form.domestic_water_consumption;
+                document.getElementById("garden_area").innerHTML = response.data.form.garden_area;
+                document.getElementById('garden_use').innerHTML = response.data.form.garden_use;
+
+
+                document.getElementById("src_fuel").innerHTML = response.data.form.src_fuel;
+                document.getElementById('assess_ob_at_power_house').innerHTML = response.data.form.assess_ob_at_power_house;
+                document.getElementById('assess_ob_at_compressor').innerHTML = response.data.form.assess_ob_at_compressor;
+                document.getElementById('assess_ob_at_genset').innerHTML = response.data.form.assess_ob_at_genset;
+                document.getElementById('assess_ob_at_boiler').innerHTML = response.data.form.assess_ob_at_boiler;
+                document.getElementById('assess_ob_at_thermopac').innerHTML = response.data.form.assess_ob_at_thermopac;
+
+                document.getElementById('compressed_air_saving').innerHTML = response.data.form.compressed_air_saving;
+                document.getElementById('scope_comp_air').innerHTML = response.data.form.scope_comp_air;
+                document.getElementById('lighting_observation').innerHTML = response.data.form.lighting_observation;
+                document.getElementById('light_save').innerHTML = response.data.form.lighting_saving;
+                document.getElementById('lighting_est_investment').innerHTML = response.data.form.lighting_est_investment;
+
+                document.getElementById('electrical_motors_observations').innerHTML = response.data.form.electrical_motors_observations;
+                document.getElementById('total_elec_motors').innerHTML = response.data.form.total_elec_motors;
+                document.getElementById('elec_motors').innerHTML = response.data.form.elec_motors;
+                document.getElementById('scope_waste').innerHTML = response.data.form.scope_waste;
+
+                document.getElementById('lighting_est_savings').innerHTML = response.data.form.lighting_est_savings;
+                document.getElementById('elec_motors').innerHTML = response.data.form.elec_motors;
+                document.getElementById('opportunities_in_the_facility').innerHTML = response.data.form.opportunities_in_the_facility;
+                document.getElementById('material_conservation_opportunities').innerHTML = response.data.form.material_conservation_opportunities;
+                document.getElementById('water_reuse_opportunities').innerHTML = response.data.form.water_reuse_opportunities;
+                document.getElementById('scope_for_renewable').innerHTML = response.data.form.facility_category;
+                document.getElementById('details_of_renewable_energy').innerHTML = response.data.form.details_of_renewable_energy;
+                document.getElementById('annual_rainfall').innerHTML = response.data.form.annual_rainfall;
+                document.getElementById('rw_harvesting_observation').innerHTML = response.data.form.rw_harvesting_observation;
+
+
+                document.getElementById('obs_on_safety').innerHTML = response.data.form.obs_on_safety;
+                document.getElementById('obs_on_elec_earth').innerHTML = response.data.form.obs_on_elec_earth;
+                document.getElementById('annual_production_quantity').innerHTML = response.data.form.annual_production_quantity;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+
+
+
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+                document.getElementById('').innerHTML = response.data.form.facility_category;
+
+
+
+
+            })
+            .catch(err => console.log(err))
+
+
+        function generateReportPDF() {
+            const element = document.getElementById("reportContent")
+
+            console.log(element);
+
+            html2pdf()
+                .from(element)
+                .save();
+        }
+
+    </script>
+
+</body>
+
+</html>

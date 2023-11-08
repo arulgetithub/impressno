@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro Gurmukhi:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="supply.css">
+    <link rel="stylesheet" href="discharge.css">
+    <link rel="stylesheet" href="risk&challenges.css">
+    <link rel="stylesheet" href="profile.css">
+    <title>Form</title>
+
+
+</head>
+
+<body>
+    <div class="navBar bg-dark p-3 px-5 d-flex align-items-center justify-content-between rounded mx-2"
+        style="height: 70px; width: 100vw;">
+        <div>
+            <b class="fs-2" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">VRNC</b>
+        </div>
+        <div class="d-flex">
+            <a class="p-0" href="index.html">
+                <div class="btn rounded-3 text-white"><b>Form</b></div>
+            </a>
+            <a href="dashboard.html">
+                <div class="btn rounded-3 text-white"><b>Dashboard</b></div>
+            </a>
+            <a href="new_form.html">
+                <div class="btn rounded-3 text-white"><b>Form 2</b></div>
+            </a>
+            <a href="new_dashboard.html">
+                <div class="btn rounded-3 text-white"><b>Dashboard 2</b></div>
+            </a>
+        </div>
+    </div>
+    <div id="companyProfile">
+        <h1 class="fs-1"><b>Company Profile</b></h1>
+        <div class="container">
+            <div>
+                <fieldset>
+                    <!--<legend>COMPANY PROFILE</legend>-->
+
+                    <div>
+                        <label for="name">1. Name:</label>
+                        <input type="text" id="name" name="name"><br><br>
+                    </div>
+                    <div>
+                        <label for="org-name">2. Organization Name:</label>
+                        <input type="text" id="org-name" name="org-name"><br><br>
+                    </div>
+                    <div>
+                        <label for="mail">3. Email-id:</label>
+                        <input type="text" id="mail" name="mail"><br><br>
+                    </div>
+                    <div>
+                        <label for="Contact">4. Contact number:</label>
+                        <input type="text" id="contact" name="Contact">
+                    </div><br><br>
+                    <div>
+                        <label for="Address">5. Address</label><br>
+                        &nbsp;<textarea id="address" name="Address" rows="3" cols="50"></textarea>
+                        <br><br><br>
+                    </div>
+
+                    <div>
+                        <label for="country">6. Unit type</label>
+                        <select id="unitType" name="unitType">
+                            <option value="null">Choose an option</option>
+                            <option value="spinning">Spinning</option>
+                            <option value="dyeing">Dyeing</option>
+                            <option value="finishing">Finishing</option>
+                            <option value="fabric_printing">Fabric Printing</option>
+                            <option value="garment_making">Garment Making</option>
+                            <option id="others" value="others">Others</option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <input placeholder="Details..." type="text" id="others_display" name="Others">
+                    </div>
+
+                    <br>
+                    <div>
+                        <label>7. Unit investment (INR):</label>
+                    </div>
+                    <div id="op">
+                        <div class="form-check">
+                            <input onclick="setUnitInvestment('Micro')" class="form-check-input" type="radio"
+                                name="flexRadioDefault" value="Micro" id="below25">
+                            <label class="form-check-label" for="below25">
+                                Micro (Below 25L)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="setUnitInvestment('Small')" class="form-check-input" type="radio"
+                                name="flexRadioDefault" value="Small" id="above25">
+                            <label class="form-check-label" for="above25">
+                                Small (25L-5Cr)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="setUnitInvestment('Medium')" class="form-check-input" type="radio"
+                                name="flexRadioDefault" value="Medium" id="above5">
+                            <label class="form-check-label" for="above5">
+                                Medium (5Cr to 10Cr)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input onclick="setUnitInvestment('Large')" class="form-check-input" type="radio"
+                                name="flexRadioDefault" value="Large" id="above10">
+                            <label class="form-check-label" for="above10">
+                                Large (Above 10Cr)
+                            </label>
+                        </div>
+                    </div>
+                    <br><br><br>
+
+                    <div>
+                        <label for="volume">8. Unit's annual production volume(units)</label>
+                        <input type="text" id="volume" name="volume">
+                    </div><br>
+
+                    <div>
+                        <label for="end_product">9. End product:</label>
+                        <input type="text" id="end_product" name="end_product">
+                    </div><br><br><br>
+                    <div>
+                        <label for="Markets">10. Markets Served</label><br>
+                        &nbsp;
+                        <div>
+                            <input type="text" id="countryInput" list="countries">
+                            <datalist id="countries"></datalist>
+                        </div><br>
+                        <div>
+                            <input type="text" id="countryInput1" list="countries1">
+                            <datalist id="countries1"></datalist>
+                        </div><br>
+                        <div>
+                            <input type="text" id="countryInput2" list="countries2">
+                            <datalist id="countries2"></datalist>
+                        </div><br>
+
+                        <div>
+                            <label for="memberships">11. Association memberships</label><br>
+                            &nbsp;<textarea id="memberships" name="memberships" rows="3" cols="50"></textarea>
+                        </div><br><br><br>
+
+                        <div>
+                            <label for="labour">12. Total labour force:</label>
+                            <input type="text" id="labour" name="labour"><br><br>
+                        </div>
+                        <div>
+                            <label for="women">13. Total women:</label>
+                            <input type="text" id="women" name="women">
+                        </div>
+                        <br><br>
+
+                        <div class="requirement permit">
+                            <p>14. Permit requirement and compliance status( If yes, mention the regulatory
+                                institutions)</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Water_use" name="permit"
+                                    id="wateruse">
+                                <label class="form-check-label" for="wateruse">
+                                    Water use
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Wastewater_discharge"
+                                    name="permit" id="wastewaterdischarge">
+                                <label class="form-check-label" for="wastewaterdischarge">
+                                    Wastewater discharge
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Wastewater_treatment"
+                                    name="permit" id="wastewatertreatment">
+                                <label class="form-check-label" for="wastewatertreatment">
+                                    Wastewater treatment
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Chemical" name="permit"
+                                    id="chemicaluse">
+                                <label class="form-check-label" for="chemicaluse">
+                                    Chemical use and management
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Air_emissions" name="permit"
+                                    id="airemissions">
+                                <label class="form-check-label" for="airemissions">
+                                    Air emissions
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Solid_waste_management"
+                                    name="permit" id="solidwaste">
+                                <label class="form-check-label" for="solidwaste">
+                                    Solid waste management
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Other_Environmental_permits"
+                                    name="permit" id="otherpermits">
+                                <label class="form-check-label" for="otherpermits">
+                                    Other Environmental permits
+                                </label>
+                            </div>
+
+                        </div><br>
+
+
+                        <textarea placeholder="Additional Information..." id="additional" name="additional" rows="5"
+                            cols="50"></textarea>
+                        <br><br>
+                        <!-- <button type="submit" class="btn btn-primary" name="Submit" id="next2" onclick="location.href = 'supply.html';">Next &raquo;</button> -->
+                        <button onclick="handleCompanyProfile()" onclick="validateProfile()" name="Submit" id="next2"
+                            class="btn btn-primary">Next
+                            &raquo;</button>
+
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="waterSupply">
+        <h1 class="fs-1"><b>Water Supply</b></h1>
+        <div class="container">
+
+
+            <div id="form">
+                <fieldset>
+                    <!-- <legend>WATER SUPPLY</legend> -->
+                    <div class="sourcing">
+                        <p>15. Sourcing (with percentage if known):</p>
+
+                        <input class="checkbox" type="checkbox" id="pipe" name="source"
+                            value="Pipe water / Muncipal water">
+                        <label for="pipe">Pipe water / Municipal water</label>
+                        <br>
+                        <input type="checkbox" id="bore" name="source" value="source">
+                        <label for="bore">Groundwater (Bore)</label>
+                        <br>
+                        <input type="checkbox" id="surface" name="source" value="Surface water">
+                        <label for="surface">Surface water (River)</label>
+                        <br>
+                        <input type="checkbox" id="treated" name="source" value="Treated water ">
+                        <label for="treated">Treated water (IETP/CETP)</label>
+                        <br>
+                        <input type="checkbox" id="sources" name="source" value="Water from other sources">
+                        <label for="sources">Water from other sources</label>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <p>16. Quality of Water supply:</p>
+
+                    <input type="radio" onclick="setperformance('performed')" id="performed" name="quality">
+                    <label for="performed">Water Testing Performed</label>
+                    <br>
+                    <input type="radio" onclick="setperformance('notperformed')" id="notPerformed" name="quality">
+                    <label for="notPerformed">Water Testing Not Performed</label>
+                    <br>
+                    <br>
+                    <br>
+                    <p>17. Is the water treated before being used ?</p>
+
+                    <input type="radio" onclick="settreatment('treateds')" id="treateds" name="use" value="treateds">
+                    <label for="treateds">No treatment</label>
+                    <br>
+                    <input type="radio" onclick="settreatment('treatment')" id="treatment" name="use" value="treatment">
+                    <label for="treatment">Yes, pre treatment</label>
+                    <br>
+                    <input type="radio" onclick="settreatment('biological')" id="biological" name="use"
+                        value="biological">
+                    <label for="biological">Yes, biological treatment</label>
+                    <br>
+                    <input type="radio" onclick="settreatment('secondary')" id="secondary" name="use" value="secondary">
+                    <label for="secondary">Yes, secondary treatment</label>
+                    <br>
+                    <input type="radio" onclick="settreatment('advanced')" id="advanced" name="use" value="advanced">
+                    <label for="advanced">Yes, advanced treatment</label>
+                    <br>
+                    <br>
+                    <p class="quantity">18. Quantity of water supply : <input id="quantity" class="input" type="text"
+                            placeholder=" " /></p>
+
+
+
+
+
+
+                    <label for="water"></label>
+
+                    <br>
+                    <br>
+                    <!-- <p>17. Water consumption in last 3 years (in Kilo Litres; 1000 m3 = 1 KL) : </p>
+                <br>
+               -->
+                    <!-- <table>
+
+                    <thead>
+                        <th>Year</th>
+                        <th>1st Quarter</th>
+                        <th>2nd Quarter</th>
+                        <th>3rd Quarter</th>
+                        <th>4th Quarter</th>
+                       
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                           
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                           
+                        </tr>
+                    </tbody>
+                </table> -->
+
+                    <p id="yearfirst">19. Water consumption of year 1 (in Kilo Litres; 1000 m3 = 1 KL) :</p>
+                    <button id="year1" onclick="handleyear1">year1</button>
+                    <!-- <input id="lastyear" type="text" class="input" /> -->
+                    <br>
+                    <div id="firstyear">
+                        <p>19.1 Cost of Water (INR/KL) – Treated / Fresh Water :
+                            <input id="cost" class="input" type="text" placeholder=" " />
+                        </p>
+                        <p>19.2 Does your unit track its factory / office water consumption separately:
+                            <input type="radio" id="yes1" onclick="waterconsumption('yes')" name="unit" value="show">
+                            <label for="yes1">Yes</label>
+                            <input type="radio" id="no1" onclick="waterconsumption('no')" name="unit" value="hide">
+                            <label for="no1">No</label>
+                        </p>
+                        <div id="process1">
+                            <ul>
+                                <li>Water consumption by process : <input id="firstnameprocess" class="input"
+                                        type="text" placeholder=" " /></li>
+                                <li>Water consumption by domestic : <input id="firstnamedomestic" class="input"
+                                        type="text" placeholder=" " /></li>
+                            </ul>
+                        </div>
+                        <!-- <p id="if-yes">  -->
+                        </p>
+                        <p>19.3 Has your facility implemented a water balance to evaluate water input and output ?
+                            <input type="radio" id="yes2" name="io" onclick="waterbalance('yes')" value="yes2">
+                            <label for="yes2">Yes</label>
+                            <input type="radio" id="no2" name="io" onclick="waterbalance('no')" value="no2">
+                            <label for="no2">No</label>
+                        </p>
+                        <p>19.4 Which facility process/operation uses water the most : <input id="waterusage"
+                                class="input" type="text" placeholder=" " /></p>
+                        <br>
+                        <p>19.5 Has your facility implemented a plan to optimize water usage (provide details) ?
+                            <input type="radio" id="yes3" onclick="waterusage('yes')" name="plan" value="yes3">
+                            <label for="yes3">Yes</label>
+                            <input type="radio" id="no3" onclick="waterusage('no')" name="plan" value="no3">
+                            <label for="no3">No</label>
+                        </p>
+                        <label for="avatar">19.6 upload water report file(pdf/docx):</label>
+
+                        <input type="file" id="avatar" name="avatar" accept=".pdf, .doc, .docx">
+
+                    </div>
+
+
+                    <br>
+
+
+
+
+
+
+                    <p id="yearsecond">20. Water consumption of year 2 (in Kilo Litres; 1000 m3 = 1 KL) :</p>
+                    <button id="year2" onclick="handleyear2">year2</button>
+                    <!-- <input id="lastyear" type="text" class="input" /> -->
+                    <br>
+                    <div id="secondyear">
+                        <p>20.1 Cost of Water (INR/KL) – Treated / Fresh Water :
+                            <input id="cost2" class="input" type="text" placeholder=" " />
+                        </p>
+                        <p>20.2 Does your unit track its factory / office water consumption separately:
+                            <input type="radio" id="yes12" onclick="waterconsumption2('yes')" name="unit1" value="show">
+                            <label for="yes12">Yes</label>
+                            <input type="radio" id="no12" onclick="waterconsumption2('no')" name="unit1" value="hide">
+                            <label for="no12">No</label>
+                        </p>
+                        <div id="process2">
+                            <ul>
+                                <li>Water consumption by process : <input id="firstnameprocess1" class="input"
+                                        type="text" placeholder=" " /></li>
+                                <li>Water consumption by domestic : <input id="firstnamedomestic1" class="input"
+                                        type="text" placeholder=" " /></li>
+                            </ul>
+                        </div>
+                        <!-- <p id="if-yes2"> -->
+                        </p>
+                        <p>20.3 Has your facility implemented a water balance to evaluate water input and output ?
+                            <input type="radio" id="yes13" onclick="waterbalance2('yes')" name="io" value="yes13">
+                            <label for="yes13">Yes</label>
+                            <input type="radio" id="no13" onclick="waterbalance2('no')" name="io" value="no13">
+                            <label for="no13">No</label>
+                        </p>
+                        <p>20.4 Which facility process/operation uses water the most : <input id="waterusage2"
+                                class="input" type="text" placeholder=" " /></p>
+                        <br>
+                        <p>20.5 Has your facility implemented a plan to optimize water usage (provide details) ?
+                            <input type="radio" id="yes14" onclick="waterusage2('yes')" name="plan" value="yes14">
+                            <label for="yes14">Yes</label>
+                            <input type="radio" id="no14" onclick="waterusage2('no')" name="plan" value="no14">
+                            <label for="no14">No</label>
+                        </p>
+                        <label for="avatar2">20.6 upload water report file(pdf/docx):</label>
+
+                        <input type="file" id="avatar2" name="avatar" accept=".pdf, .doc, .docx">
+
+                    </div>
+
+
+                    <br>
+
+
+
+
+
+
+                    <p id="yearthird">21. Water consumption of year 3 (in Kilo Litres; 1000 m3 = 1 KL) :</p>
+                    <button id="year3" onclick="handleyear3">year3</button>
+                    <!-- <input id="lastyear" type="text" class="input" /> -->
+                    <br>
+                    <div id="thirdyear">
+                        <p>21.1 Cost of Water (INR/KL) - Treated / Fresh Water :
+                            <input id="cost3" class="input" type="text" placeholder=" " />
+                        </p>
+                        <p>21.2. Does your unit track its factory / office water consumption separately:
+                            <input type="radio" id="yes15" onclick="waterconsumption3('yes')" name="unit2" value="show">
+                            <label for="yes15">Yes</label>
+                            <input type="radio" id="no15" onclick="waterconsumption3('no')" name="unit2" value="hide">
+                            <label for="no15">No</label>
+                        </p>
+                        <div id="process3">
+                            <ul>
+                                <li>Water consumption by process : <input id="firstnameprocess2" class="input"
+                                        type="text" placeholder=" " /></li>
+                                <li>Water consumption by domestic : <input id="firstnamedomestic2" class="input"
+                                        type="text" placeholder=" " /></li>
+                            </ul>
+                        </div>
+                        <!-- <p id="if-yes3"> -->
+                        </p>
+                        <p>21.3 Has your facility implemented a water balance to evaluate water input and output ?
+                            <input type="radio" id="yes16" onclick="waterbalance3('yes')" name="io" value="no16">
+                            <label for="yes16">Yes</label>
+                            <input type="radio" id="no16" onclick="waterbalance3('no')" name="io" value="no16">
+                            <label for="no16">No</label>
+                        </p>
+                        <p>21.4 Which facility process/operation uses water the most : <input id="waterusage3"
+                                class="input" type="text" placeholder=" " /></p>
+                        <br>
+                        <p>21.5 Has your facility implemented a plan to optimize water usage (provide details) ?
+                            <input type="radio" id="yes17" onclick="waterusage3('yes')" name="plan" value="yes17">
+                            <label for="yes17">Yes</label>
+                            <input type="radio" id="no17" onclick="waterusage3('no')" name="plan" value="no17">
+                            <label for="no17">No</label>
+                        </p>
+                        <label for="avatar3">21.6 upload water report file(pdf/docx):</label>
+
+                        <input type="file" id="avatar3" name="avatar" accept=".pdf, .doc, .docx">
+
+                    </div>
+
+
+                    <br>
+
+
+
+
+                    <!-- <button class="btn btn-primary" type="submit" id="prev" name="submit2" onclick="window.location.href='profile.html';">&laquo; Previous</button> -->
+                    <button onclick="handleFirstPage()" class="btn btn-primary" id="prev">&laquo;Previous</button>
+                    <!-- <button type="text" class="btn btn-primary" id="next">Next &raquo;</button> -->
+                    <button onclick="handleWaterSupply()" class="btn btn-primary" id="next">Next &raquo;</button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <!--discharge page-->
+
+    <div id="waterDischarge">
+        <h1 class="fs-1"><b>Water Discharge</b></h1>
+        <div class="container">
+
+            <div>
+                <fieldset>
+                    <!--<legend>Water Discharge</legend> -->
+                    <!-- waste water -->
+                    <div class="waste__water">
+                        <label for="waste_water">22. Does your facility generate waste water</label>
+                        <div class="form-check" id="select1">
+                            <input class="form-check-input" type="radio" onclick="wastewater('yes')" name="toggle"
+                                id="yes4" value="show">
+                            <label class="form-check-label" for="yes4">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check" id="select2">
+                            <input class="form-check-input" type="radio" onclick="wastewater('no')" name="toggle"
+                                id="no4" value="hide">
+                            <label class="form-check-label" for="no4">
+                                No
+                            </label>
+                        </div>
+                    </div><br>
+
+                    <div id="displayDischarge">
+                        <ul>
+                            <li><label for="total_discharge">22.1. If yes, total discharge volume per day (m³
+                                    ):</label><input type="text" id="total_discharge" name="total_discharge"
+                                    placeholder="Total discharge m³"></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- total discharge -->
+                    <div id="yes-display">
+                        <input type="text" id="total_discharge" name="total_discharge">
+                    </div><br>
+
+                    <!-- zero liquid discharge -->
+                    <div id="zd">
+                        <label for="zero_discharge">23. Does your facility have zero liquid discharge (ZLD):</label>
+                        <div class="form-check" id="select3">
+                            <input class="form-check-input" type="radio" onclick="zeroliquid('yes')" name="zld"
+                                id="yes6" value="true">
+                            <label class="form-check-label" for="yes6">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check" id="select4">
+                            <input class="form-check-input" type="radio" onclick="zeroliquid('no')" name="zld" id="No6"
+                                value="false">
+                            <label class="form-check-label" for="No6">
+                                No
+                            </label>
+                        </div>
+                    </div><br><br>
+
+
+                    <!-- treatment facility -->
+
+                    <div class="treatment_facility">
+
+                        <p id="tr">24. Treatment facility for the unit</p>
+
+                        <div id="tf" class="treatmentFacility">
+                            <div class="form-check" id="c1">
+                                <input class="form-check-input" type="checkbox"
+                                    value="Common effluent treatment facility" id="commoneffluent" name="facility">
+                                <label class="form-check-label" for="commoneffluent">
+                                    Common effluent treatment facility
+                                </label>
+                            </div>
+                            <div class="form-check" id="c2">
+                                <input class="form-check-input" type="checkbox"
+                                    value="Individual effluent treatment facility" id="individual" name="facility">
+                                <label class="form-check-label" for="individual">
+                                    Individual effluent treatment facility
+                                </label>
+                            </div>
+                            <div class="form-check" id="c3">
+                                <input class="form-check-input" type="checkbox" value="No treatment facility"
+                                    id="nofacility" name="facility">
+                                <label class="form-check-label" for="nofacility">
+                                    No treatment facility
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <ul id="check2b-display">
+                            <li>24.1. Wastewater treatment methods/ practices:
+                                <div class="practiceMethods">
+                                    <div class="form-check" id="c11">
+                                        <input class="form-check-input" type="checkbox" value="Primary" id="primary"
+                                            name="method">
+                                        <label class="form-check-label" for="primary">
+                                            Primary
+                                        </label>
+                                    </div>
+                                    <div class="form-check" id="c22">
+                                        <input class="form-check-input" type="checkbox" value="Secondary"
+                                            id="Secondary1" name="method">
+                                        <label class="form-check-label" for="Secondary1">
+                                            Secondary
+                                        </label>
+                                    </div>
+                                    <div class="form-check" id="c33">
+                                        <input class="form-check-input" type="checkbox" value="Tertiary" id="Tertiary"
+                                            name="method">
+                                        <label class="form-check-label" for="Tertiary">
+                                            Tertiary
+                                        </label>
+                                    </div>
+                                </div>
+                            </li><br>
+
+                            <li>
+                                <label for="method">24.2.Please, fill the appropriate methods (<i>refer FEM 3.0
+                                        Module</i>) :</label>
+                                <input type="number" id="method" name="method">
+                            </li>
+                            <li>
+                                <label for="treatment_capacity">24.3. Total water treatment (m³) capacity of the
+                                    unit:</label>
+                                <input type="number" id="treatment_capacity" name="treatment_capacity">
+                            </li>
+                        </ul>
+                    </div><br>
+
+
+                    <!-- track wastewater volume seperately -->
+                    <div class="track_volume">
+                        <label for="track_volume">25. Does your unit track its industrial / domestic wastewater volumes
+                            separately:</label>
+                        <div class="form-check" id="select5">
+                            <input class="form-check-input" onclick="domesticwater('yes')" type="radio" name="volume"
+                                id="yes7" value="yes7">
+                            <label class="form-check-label" for="yes7">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check" id="select6">
+                            <input class="form-check-input" onclick="domesticwater('No')" type="radio" name="volume"
+                                id="No7" value="No7">
+                            <label class="form-check-label" for="No7">
+                                No
+                            </label>
+                        </div>
+
+
+                        <ul id="yes2-display">
+                            <li>
+                                <p>25.1. Wastewater volume percentage: <br> Industrial <input type="number"
+                                        name="industrial" id="industrial"> % &nbsp;<br><br> Domestic <input
+                                        type="number" name="domestic1" id="domestic1">
+                                    %</p><br>
+                            </li>
+                            <li>
+                                <p>25.2. Volume of treated wastewater per category: <br> Industrial <input type="number"
+                                        name="industrial1" id="industrial1"> % &nbsp;<br><br> Domestic
+                                    <input type="number" name="domestic2" id="domestic2"> %
+                                </p>
+                            </li>
+                        </ul>
+                    </div><br><br>
+
+
+
+
+
+
+                    <div class="treatment_facility">
+
+                        <p id="dp">26. Final discharge point of treated / untreated wastewater:</p>
+
+                        <div id="fd" class="untreatedWater">
+                            <div class="form-check" id="c1a">
+                                <input class="form-check-input" type="checkbox" value="Land" id="land" name="treated">
+                                <label class="form-check-label" for="land">
+                                    Land
+                                </label>
+                            </div>
+                            <div class="form-check" id="c2b">
+                                <input class="form-check-input" type="checkbox" value="Water" id="Water" name="treated">
+                                <label class="form-check-label" for="Water">
+                                    Water
+                                </label>
+                            </div>
+                            <div class="form-check" id="c3c">
+                                <input class="form-check-input" type="checkbox" value="Re-use" id="reuse"
+                                    name="treated">
+                                <label class="form-check-label" for="reuse">
+                                    Re-use
+                                </label>
+                            </div>
+                        </div>
+                    </div><br><br>
+
+                    <div id="pw">
+                        <label for="water_recovery">27. Percentage of Water Recovery % from Effluent:</label>
+                        <input type="number" id="water_recovery" name="water_recovery">
+                    </div><br><br>
+
+                    <div>
+                        <label for="Industrial_sludge" id="is">28. Details on discharge of Industrial
+                            sludge:</label><br>
+                        <textarea id="industrial_sludge" name="industrial_sludge" rows="5" cols="80"></textarea>
+                    </div><br><br>
+
+
+                    <div class="quality_standards">
+
+                        <p id="le">29. Is the factory always in compliance with legal waste water quality standards,
+                            permits,
+                            monitoring or
+                            other contractual agreements?</p>
+
+                        <div id="qs" class="qualityStandards">
+                            <div class="form-check" id="c1d">
+                                <input class="form-check-input" type="checkbox"
+                                    value="Company meets all existing quality standards and has either a company standard and/or has a compliance system in place"
+                                    id="standards" name="monitor">
+                                <label class="form-check-label" for="standards">
+                                    Company meets all existing quality standards and has either a company standard
+                                    and/or
+                                    has a compliance system in place
+                                </label>
+                            </div>
+                            <div class="form-check" id="c2e">
+                                <input class="form-check-input" type="checkbox"
+                                    value="Site meets water quality requirements, but no company-specific standards or compliance systems exist"
+                                    id="requirements" name="monitor">
+                                <label class="form-check-label" for="requirements">
+                                    Site meets water quality requirements, but no company-specific standards or
+                                    compliance
+                                    systems exist
+                                </label>
+                            </div>
+                            <div class="form-check" id="c3f">
+                                <input class="form-check-input" type="checkbox"
+                                    value="Unknown or in general meets water quality standards, but may have some violations"
+                                    id="violations" name="monitor">
+                                <label class="form-check-label" for="violations">
+                                    Unknown or in general meets water quality standards, but may have some violations
+                                </label>
+                            </div>
+                            <div class="form-check" id="c4g">
+                                <input class="form-check-input" type="checkbox"
+                                    value="The site sometimes meets water quality standards, but is regularly in violation"
+                                    id="regular_violation" name="monitor">
+                                <label class="form-check-label" for="regular_violation">
+                                    The site sometimes meets water quality standards, but is regularly in violation
+                                </label>
+                            </div>
+                            <div class="form-check" id="c5h">
+                                <input class="form-check-input" type="checkbox"
+                                    value="The site rarely or never meets existing water quality standards"
+                                    id="existing" name="monitor">
+                                <label class="form-check-label" for="existing">
+                                    The site rarely or never meets existing water quality standards
+                                </label>
+                            </div>
+                        </div>
+                    </div><br><br>
+
+                    <div>
+                        <label for="comments" id="gc">30. General Comments and Feedback:</label><br>
+                        <textarea name="comments" id="comments" cols="80" rows="6"
+                            placeholder="Write any comment or suggestion..."></textarea>
+                    </div><br>
+
+
+                    <!-- <button class="btn btn-primary" type="submit" id="prev" name="submit2">&laquo; Previous</button>
+            <button type="text" class="btn btn-primary" id="next" onclick="window.location.href='Risks and challanges.html';">Next &raquo;</button> -->
+
+                    <div id="nex">
+                        <button onclick="handleCompanyProfile()" class="btn btn-primary" id="prev">&laquo;
+                            Previous</button>
+                        <!-- <button type="text" class="btn btn-primary" id="next">Next &raquo;</button> -->
+                        <button onclick="handleWaterDischarge()" class="btn btn-primary" id="next">Next &raquo;</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+    <!--risk and challenges page-->
+
+    <div id="riskAndChallenges">
+        <h1 class="fs-1"><b>Risks & challanges</h1>
+        <div class="container">
+            <div>
+                <fieldset>
+                    <!-- <legend>RISKS AND CHALLENGES</legend> -->
+
+                    <p>
+                        31. Relative to other water users in your local catchment (within 50km radius), does the
+                        factory face heavy
+                        water-related regulation and legal enforcement?</p>
+                    <div class="legalEnforcement">
+                        <input type="checkbox" id="noregulation" name="local" value="noregulation">
+                        <label for="noregulation">No, the site is under no/minimal regulation and/or legal
+                            enforcement</label>
+
+                        <div>
+                            <input type="checkbox" id="regulation" name="local" value="regulation">
+                            <label for="regulation">No, the site is under similar regulation and/or legal enforcement as
+                                other
+                                users</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="unknown" name="local" value="unknown">
+                            <label for="unknown">Unknown</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="greater" name="local" value="greater">
+                            <label for="greater">Yes, possibly the site is under greater regulation and/or legal
+                                enforcement</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="muchgreater" name="local" value="muchgreater">
+                            <label for="muchgreater">Yes, the site is under much greater regulation and/or legal
+                                enforcement</label>
+                        </div><br><br><br>
+                    </div>
+                    <p>
+                        32. Did your facility receive any government issued environmental violation records in the last
+                        3 years:
+                    </p>
+                    <input type="radio" id="yes8" onclick="violationrecords('yes')" name="AC" value="yes8">
+                    <label for="yes8">Yes</label>
+                    <input type="radio" id="no8" onclick="violationrecords('no')" name="AC" value="no8">
+                    <label for="no8">No</label>
+                    <div id="yes-display2">
+                        <textarea id="waters" cols="100" rows="5"></textarea>
+                    </div>
+                    <br>
+
+                    <!-- siudfcsjkcnhbchjsbhcsdsadads -->
+                    <p>
+                        33. Did your facility face temporary shutdown in the last 3 years:
+                    </p>
+                    <input type="radio" id="yes9" onclick="tempshutdown('yes')" name="AD" value="yes9">
+                    <label for="yes9">Yes</label>
+                    <input type="radio" id="no9" onclick="tempshutdown('no')" name="AD" value="no9">
+                    <label for="no9">No</label>
+                    <div id="ad-display">
+
+                        <!-- <textarea id="w" cols="100" rows="5"></textarea> -->
+                    </div>
+                    <br>
+                    <p>
+                        34. Did your facility considerable loss of business in the last 3 years:
+                    </p>
+                    <input type="radio" id="yes10" onclick="businessloss('yes')" name="AE" value="true">
+                    <label for="yes10">Yes</label>
+                    <input type="radio" id="no10" onclick="businessloss('no')" name="AE" value="no10">
+                    <label for="no10">No</label>
+                    <div id="ae-display">
+
+                        <!-- <textarea id="w" cols="100" rows="5"></textarea> -->
+                    </div>
+                    <br>
+                    <p>
+                        35. Did your facility recive legal action from individuals/community/instructons in the last 3
+                        years:
+                    </p>
+                    <input type="radio" id="yes11" onclick="legalaction('yes')" name="AF" value="yes11">
+                    <label for="yes11">Yes</label>
+                    <input type="radio" id="no11" onclick="legalaction('no')" name="AF" value="no11">
+                    <label for="no11">No</label>
+                    <div id="af-display">
+
+                        <!-- <textarea id="w" cols="100" rows="5"></textarea> -->
+                    </div>
+                    <br><br>
+                    <p>
+                        36. Relative to other water users in your local catchment (within a 50km radius), would you
+                        consider the
+                        site a large water user/polluter?
+                    </p>
+                    <input type="radio" id="nolarge" onclick="largewater('nopolluter')" name="CA"
+                        value="No, the site is not a large water user">
+                    <label for="nolarge">No, the site is not a large water user</label>
+                    <div>
+                        <input type="radio" id="nopolluter" name="CA" onclick="largewater('nolarge')" value="nolarge">
+                        <label for="nopolluter">No, the site is not a large water user/polluter (relative to
+                            others)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="unknown2" onclick="largewater('Unknown')" name="CA" value="Unknown">
+                        <label for="unknown2">Unknown</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="somelocals" name="CA" onclick="largewater('locals')" value="locals">
+                        <label for="somelocals">Yes,the site is a recoginable branf=d to some locals</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="alllocals" name="CA" onclick="largewater('alllocals')"
+                            value="alllocals">
+                        <label for="alllocals">Yes, the site is a recoginable brand to most/all locals</label>
+                    </div>
+                    <br><br><br>
+                    <p>
+                        37. How would you describe this site&#39;s general water management/stewardship maturity?
+                    </p>
+                    <input type="radio" id="longstanding" name="DA" onclick="generalmanagement('steward')"
+                        value="steward">
+                    <label for="longstanding">Long standing advanced water stewardship practices</label>
+                    <div>
+                        <input type="radio" id="advancedpractice" name="DA"
+                            onclick="generalmanagement('adavancedsteward')" value="adavancedsteward">
+                        <label for="advancedpractice">Recently began advanced water stewardship practices</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="watermanagement" onclick="generalmanagement('watermanagement')"
+                            name="DA" value="watermanagement">
+                        <label for="watermanagement">Established Water Management</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="initialwater" onclick="generalmanagement('initialwater')" name="DA"
+                            value="initialwater">
+                        <label for="initialwater">Initial actions on water</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="noaction" onclick="generalmanagement('noaction')" name="DA"
+                            value="noaction">
+                        <label for="noaction">No action(s) on water</label>
+                    </div>
+                    <br><br><br>
+                    <p>
+                        38. Standards/ certifications- achieved/ planned. Give reasons:
+                    </p>
+                    <textarea id="achievement" cols="100" name="certi" rows="5"></textarea>
+                    <br><br><br>
+                    <p>
+                        39. Access to finance-source (incentives, government/ private schemes):
+                    </p>
+                    <textarea id="financeaccess" cols="100" name="fsource" rows="5"></textarea>
+                    <br><br><br>
+                    <p>
+                        40. Access to technical know-how :
+                    </p>
+                    <input type="radio" id="consultants" onclick="technicalknowhow('consultants')" name="EA"
+                        value="consultants">
+                    <label for="consultants">Consultants</label>
+                    <div>
+                        <input type="radio" id="research" onclick="technicalknowhow('research')" name="EA"
+                            value="research">
+                        <label for="research">Research and Tech institutes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="experts" onclick="technicalknowhow('experts')" name="EA"
+                            value="experts">
+                        <label for="experts">In-house experts</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="buyer" onclick="technicalknowhow('buyer')" name="EA" value="buyer">
+                        <label for="buyer">Buyer collaboration</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="others1" onclick="technicalknowhow('others1')" name="EA"
+                            value="others1">
+                        <label for="others1">Others</label><br><br>
+                    </div>
+                    <div id="eg-display">
+                        <!-- <textarea id="wwate" cols="100" name="odetail" rows="5"></textarea> -->
+                    </div>
+                    <br><br><br>
+                    <p>
+                        41. Details regarding cluster level sustainbality intiatives:
+                    </p>
+                    <textarea id="clusterlevel" cols="100" name="cluster" rows="5"></textarea>
+                    <br><br><br>
+                    <p>
+                        42. regarding engagements with other stakeholder (state/national governament, communities,
+                        NGOs,academia):
+                    </p>
+                    <textarea id="stakeholders" cols="100" name="stake" rows="5"></textarea>
+                    <br><br>
+                    <!-- <button name="submit3" onclick="submitForm()" class="submit">Submit</button> -->
+                    <div id="sub">
+                        <button onclick="handleWaterSupply()" class="btn btn-primary" id="prev1">&laquo;
+                            Previous
+                        </button>
+                        <!-- <button type="button" class="btn btn-primary splbutton" id="sub1"
+                            onclick="this.classList.toggle('button--loading'); submitForm()">
+                            <span class="px-3">Submit</span>
+                        </button> -->
+                        <button type="button" class="btn btn-primary splbutton"
+                            onclick="this.classList.toggle('splbutton--loading'); submitForm()">
+                            <span class="splbutton__text">Submit</span>
+                        </button>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4" style="text-align: center;" height="100vh" width="100vw" id="success">
+        <div class="successDiv d-flex align-items-center">
+            <img src="./img/tick.png" height="70px" width="80px" />
+            <h3><b>Assesment Entries Submitted Successfully!</b></h3>
+        </div>
+        <div onclick="reloadPage()" class="btn btn-light mt-3">
+            Done
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script>
+
+
+        firstyear = document.getElementById("firstyear");
+        secondyear = document.getElementById("secondyear");
+        thirdyear = document.getElementById("thirdyear");
+
+
+
+        year2 = document.getElementById("secondyear");
+        year3 = document.getElementById("thirdyear");
+        firstyear = document.getElementById("firstyear");
+
+
+
+        firstyear.style.display = "none";
+        secondyear.style.display = "none";
+        thirdyear.style.display = "none";
+
+
+        //accessing h1 element with the help of id='check' using getElementById('check')
+        document.getElementById('year1').onclick = function () {  // object.onclick = function(){ } 
+
+            if (firstyear.style.display === "none") {
+                firstyear.style.display = "block";
+            } else {
+                firstyear.style.display = "none";
+            }
+        };
+
+
+        document.getElementById('year2').onclick = function () {  // object.onclick = function(){ } 
+
+            if (secondyear.style.display === "none") {
+                secondyear.style.display = "block";
+            } else {
+                secondyear.style.display = "none";
+            }
+        };
+
+
+        document.getElementById('year3').onclick = function () {  // object.onclick = function(){ } 
+
+            if (thirdyear.style.display === "none") {
+                thirdyear.style.display = "block";
+            } else {
+                thirdyear.style.display = "none";
+            }
+        };
+
+
+
+        for (i = 0; i < flexRadio.length; i++) {
+            if (flexRadio[i].checked) {
+
+            }
+        }
+
+        function handleFirstPage() {
+            document.getElementById("companyProfile").style.display = "block";
+            document.getElementById("waterSupply").style.display = "none";
+            document.getElementById("waterDischarge").style.display = "none";
+            document.getElementById("riskAndChallenges").style.display = "none";
+            scrollToTop()
+        }
+        function handleCompanyProfile() {
+            document.getElementById("companyProfile").style.display = "none";
+            document.getElementById("waterSupply").style.display = "block";
+            document.getElementById("waterDischarge").style.display = "none";
+            document.getElementById("riskAndChallenges").style.display = "none";
+            scrollToTop()
+        }
+        function handleWaterSupply() {
+            document.getElementById("companyProfile").style.display = "none";
+            document.getElementById("waterSupply").style.display = "none";
+            document.getElementById("waterDischarge").style.display = "block";
+            document.getElementById("riskAndChallenges").style.display = "none";
+            scrollToTop()
+        }
+        function handleWaterDischarge() {
+            document.getElementById("companyProfile").style.display = "none";
+            document.getElementById("waterSupply").style.display = "none";
+            document.getElementById("waterDischarge").style.display = "none";
+            document.getElementById("riskAndChallenges").style.display = "block";
+            scrollToTop()
+        }
+        function scrollToTop() {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // ------------------------------------------------------------------------------------------------------------
+
+        var unitInvestment = null;
+        var performanceValue = null;
+        var treatment = null;
+        var consumption = null;
+        var balance = null;
+        var usage = null;
+        var consumption2 = null;
+        var balance2 = null;
+        var usage2 = null;
+        var consumption3 = null;
+        var balance3 = null;
+        var usage3 = null;
+        var waste = null;
+        var liquid = null;
+        var domestic = null;
+        var records = null;
+        var temp = null;
+        var legal = null;
+        var loss = null;
+        var large = null;
+        var knowhow = null;
+        var general = null;
+
+
+
+
+        function setUnitInvestment(val) {
+            unitInvestment = val
+        }
+
+        function setperformance(val) {
+            performanceValue = val
+        }
+
+        function settreatment(val) {
+            treatment = val
+        }
+
+        function waterconsumption(val) {
+            consumption = val
+        }
+        function waterbalance(val) {
+            balance = val
+        }
+
+        function waterusage(val) {
+            usage = val
+        }
+
+        function waterconsumption2(val) {
+            consumption2 = val
+        }
+        function waterbalance2(val) {
+            balance2 = val
+        }
+
+        function waterusage2(val) {
+            usage2 = val
+        }
+
+        function waterconsumption3(val) {
+            consumption3 = val
+        }
+        function waterbalance3(val) {
+            balance3 = val
+        }
+
+        function waterusage3(val) {
+            usage3 = val
+        }
+        function wastewater(val) {
+            waste = val
+        }
+
+        function zeroliquid(val) {
+            liquid = val
+        }
+
+        function domesticwater(val) {
+            domestic = val
+        }
+
+        function violationrecords(val) {
+            records = val
+        }
+
+
+        function tempshutdown(val) {
+            temp = val
+        }
+
+        function businessloss(val) {
+            loss = val
+        }
+
+        function legalaction(val) {
+            legal = val
+        }
+
+        function largewater(val) {
+            large = val
+            console.log(large);
+        }
+
+        function technicalknowhow(val) {
+            knowhow = val
+        }
+
+        function generalmanagement(val) {
+            general = val
+        }
+
+
+        async function submitForm() {
+
+            const name = document.getElementById('name').value;
+            const orgName = document.getElementById("org-name").value;
+            const mail = document.getElementById("mail").value;
+            const contact = document.getElementById('contact').value;
+            const address = document.getElementById("address").value;
+            const unitType = document.getElementById("unitType").value;
+            const volume = document.getElementById("volume").value;
+            const end_product = document.getElementById("end_product").value;
+            const memberships = document.getElementById('memberships').value;
+            const labour = document.getElementById("labour").value;
+            const women = document.getElementById("women").value;
+            const additional = document.getElementById("additional").value;
+            const quantity = document.getElementById("quantity").value;
+            const waterusage = document.getElementById("waterusage").value;
+            const cost = document.getElementById("cost").value;
+            const treatment_capacity = document.getElementById("treatment_capacity").value;
+            const cost2 = document.getElementById("cost2").value;
+            const cost3 = document.getElementById('cost3').value;
+            const waterusage2 = document.getElementById("waterusage2").value;
+            const waterusage3 = document.getElementById("waterusage3").value;
+            const selectedFile1 = document.getElementById("avatar").files[0];
+            const selectedFile2 = document.getElementById("avatar2").files[0];
+            const selectedFile3 = document.getElementById("avatar3").files[0];
+
+
+            const industrial1 = document.getElementById("industrial1").value;
+            const industrial = document.getElementById("industrial").value;
+            const domestic1 = document.getElementById("domestic1").value;
+            const domestic2 = document.getElementById("domestic2").value;
+            const clusterlevel = document.getElementById("clusterlevel").value;
+            const stakeholders = document.getElementById("stakeholders").value;
+            const achievement = document.getElementById('achievement').value;
+            const financeaccess = document.getElementById("financeaccess").value;
+            const comments = document.getElementById("comments").value;
+            const water_recovery = document.getElementById("water_recovery").value;
+            const industrial_sludge = document.getElementById("industrial_sludge").value;
+            const others_display = document.getElementById("others_display").value;
+            const countryInput = document.getElementById("countryInput").value;
+            const countryInput1 = document.getElementById("countryInput1").value;
+            const countryInput2 = document.getElementById("countryInput2").value;
+
+            const total_discharge = document.getElementById("total_discharge").value;
+            const waters = document.getElementById("waters").value;
+
+            const method = document.getElementById("method").value;
+            // const firstnameprocess = document.getElementById("firstnameprocess").value;
+            // const firstnameprocess1 = document.getElementById("firstnameprocess1").value;
+            // const firstnameprocess2 = document.getElementById("firstnameprocess2").value;
+            // const firstnamedomestic = document.getElementById("firstnamedomestic").value;
+            // const firstnamedomestic1 = document.getElementById("firstnamedomestic1").value;
+            // const firstnamedomestic2 = document.getElementById("firstnamedomestic2").value;
+
+
+
+
+            let fileName1 = "";
+            let fileName2 = "";
+            let fileName3 = "";
+
+            if (selectedFile1 != null) {
+                fileName1 = await uploadFile(selectedFile1)
+            }
+            if (selectedFile2 != null) {
+                fileName2 = await uploadFile(selectedFile2)
+            }
+            if (selectedFile3 != null) {
+                fileName3 = await uploadFile(selectedFile3)
+            }
+
+
+            // Get all checkbox groups
+            var permitGroups = document.querySelectorAll('.permit');
+            var permitItems = [];
+            // Loop through each checkbox group
+            permitGroups.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        permitItems.push(checkbox.value);
+                        console.log(permitItems);
+                    }
+                });
+            })
+
+
+            var sourcingGroups = document.querySelectorAll('.sourcing');
+            var sourcingItems = [];
+            // Loop through each checkbox group
+            sourcingGroups.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        sourcingItems.push(checkbox.value);
+                    }
+                });
+            })
+
+
+            var treatmentFacility = document.querySelectorAll('.treatmentFacility');
+            var treatmentItems = [];
+            // Loop through each checkbox group
+            treatmentFacility.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        treatmentItems.push(checkbox.value);
+                    }
+                });
+            })
+
+
+
+            var practiceMethods = document.querySelectorAll('.practiceMethods');
+            var practiceItems = [];
+            // Loop through each checkbox group
+            practiceMethods.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        practiceItems.push(checkbox.value);
+                    }
+                });
+            })
+
+            var untreatedWater = document.querySelectorAll('.untreatedWater');
+            var untreatedItems = [];
+            // Loop through each checkbox group
+            untreatedWater.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        untreatedItems.push(checkbox.value);
+                    }
+                });
+            })
+
+            var qualityStandards = document.querySelectorAll('.qualityStandards');
+            var qualityItems = [];
+            // Loop through each checkbox group
+            qualityStandards.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        qualityItems.push(checkbox.value);
+                    }
+                });
+            })
+
+            var legalEnforcement = document.querySelectorAll('.legalEnforcement');
+            var legalItems = [];
+            // Loop through each checkbox group
+            legalEnforcement.forEach(function (group, index) {
+                // Get all checkboxes within the group
+                var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+
+                // Loop through checkboxes to find checked ones within the group
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        // Add checked value to the array
+                        legalItems.push(checkbox.value);
+                    }
+                });
+            })
+
+
+
+
+            axios.post("https://general-form-submission-backend.vercel.app/services/postInformation", {
+            // axios.post("http://localhost:8080/services/postInformation", {
+                name: name,
+                orgName: orgName,
+                mail: mail,
+                general: general,
+                knowhow: knowhow,
+                large: large,
+                legal: legal,
+                performanceValue: performanceValue,
+                treatment: treatment,
+                consumption: consumption,
+                balance: balance,
+                usage: usage,
+                consumption2: consumption2,
+                balance2: balance2,
+                usage2: usage2,
+                consumption3: consumption3,
+                balance3: balance3,
+                usage3: usage3,
+                waste: waste,
+                liquid: liquid,
+                domestic: domestic,
+                records: records,
+                temp: temp,
+                contact: contact,
+                address: address,
+                unitType: unitType,
+                unitInvestment: unitInvestment,
+                volume: volume,
+                end_product: end_product,
+                countryInput: countryInput,
+                countryInput1: countryInput1,
+                countryInput2: countryInput2,
+                memberships: memberships,
+                labour: labour,
+                women: women,
+                permit: permitItems,
+                additional: additional,
+                sourcing: sourcingItems,
+                treatmentFacility: treatmentItems,
+                practiceMethods: practiceItems,
+                legalEnforcement: legalItems,
+                qualityStandards: qualityItems,
+                untreatedWater: untreatedItems,
+                quantity: quantity,
+                cost: cost,
+                waterusage: waterusage,
+                waterusage2: waterusage2,
+                waterusage3: waterusage3,
+                treatment_capacity: treatment_capacity,
+                cost2: cost2,
+                cost3: cost3,
+                avatar1: fileName1,
+                avatar2: fileName2,
+                avatar3: fileName3,
+                industrial: industrial,
+                industrial1: industrial1,
+                domestic1: domestic1,
+                domestic2: domestic2,
+                clusterlevel: clusterlevel,
+                stakeholders: stakeholders,
+                achievement: achievement,
+                financeaccess: financeaccess,
+                comments: comments,
+                industrial_sludge: industrial_sludge,
+                water_recovery: water_recovery,
+                others_display: others_display,
+                loss: loss,
+                method: method,
+
+
+
+                total_discharge: total_discharge,
+                // firstnamedomestic: firstnamedomestic,
+                // firstnamedomestic1: firstnamedomestic1,
+                // firstnamedomestic2: firstnamedomestic2,
+                // firstnameprocess: firstnameprocess,
+                // firstnameprocess1: firstnameprocess1,
+                // firstnameprocess2: firstnameprocess2,
+                waters: waters,
+
+
+
+
+            })
+                .then(function (response) {
+                    console.log(response)
+                    document.getElementById("riskAndChallenges").style.display = "none";
+                    document.getElementById("success").style.display = "block";
+                })
+                .catch(err => console.log(err))
+        }
+        function reloadPage() {
+            location.reload()
+        }
+
+        async function uploadFile(selectedFile) {
+            try {
+
+                let formData = new FormData();
+                formData.append("file", selectedFile);
+                console.log(selectedFile);
+
+                const response = await axios.post('https://general-form-submission-backend.vercel.app/uploadFile', formData, {
+                // const response = await axios.post('http://localhost:8080/uploadFile', formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    }
+                });
+                return response.data
+            } catch (error) {
+                if (error.response) { // get response with a status code not in range 2xx
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) { // no response
+                    console.log(error.request);
+                } else { // Something wrong in setting up the request
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            }
+        }
+
+    </script>
+
+    <script src="profile.js"></script>
+    <script src="supply.js"></script>
+    <script src="risk.js"></script>
+    <script src="discharge.js"></script>
+</body>
+
+</html>
